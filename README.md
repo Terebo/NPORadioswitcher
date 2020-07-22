@@ -9,7 +9,7 @@ Have you ever felt like wanting to listen to NPO 3FM at 4, and NPO Radio 1 at 5.
 
  This Electron app can switch between NPO Radio stations automaticly, at the moment there's no GUI to set this up and you'll have to go into ```[your path to the isnallation (probaly user/appData/local/nporadioswitcher)]/app-1.0.0/resources/app/src/settings/settings.json``` here you'll find a timetable that should be quite self explanitory. This is very much a work in progress and at the moment there's only info about the current program displayed and all the devtools are still exposed. I hope to have the full functionality in the next commit i do to this git.
 
- You can download a precompiled installer .exe [here](https://www.github.com/Terebo/NPORadioswitcher/github/nporadioswitcher-1.0.0 Setup.exe)
+ You can download a precompiled installer .exe [here](https://github.com/Terebo/NPORadioswitcher/blob/master/github/nporadioswitcher-1.0.0%20Setup.exe)
 
 # what's in the program at the moment and what i have planned
  - [x] audio stream for every station
