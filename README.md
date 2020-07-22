@@ -13,13 +13,13 @@ Have you ever felt like wanting to listen to NPO 3FM at 4, and NPO Radio 1 at 5.
 
 # what's in the program at the moment and what i have planned
  - [x] audio stream for every station
- - [] audio streams for themechanels
+ - [ ] audio streams for themechanels
  - [x] API info for current program
- - [] API info for next programs with dynamic changing of station api from timetable
+ - [ ] API info for next programs with dynamic changing of station api from timetable
  - [x] automagical switching of stations
  - [x] information about your timetable of stations
- - [] GUI for your timetable/settings
- - [] more options
+ - [ ] GUI for your timetable/settings
+ - [ ] more options
 
 
 I do not in any shape, way or form claim any of the imagary, logos and/or audio that's used in this project, they all belong to the NPO(Nederlandse Publieke Omroep). I also can't guarantee that all the data is up to date, as all the data is pulled directly from NPO's api.
