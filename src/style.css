@@ -1,0 +1,238 @@
+:root {
+    --themeColour: #ff6d00;
+    --NPOOrange: #ff6d00;
+    --lightGrey: #e6e6e6;
+    --darkBlueGrey: #262d35;
+    --darkGrey: #4c4c4c; 
+    --serif: 'Roboto Slab', sans-serif;
+    --sans: 'DM Sans', sans-serif;
+    --themeFilter: invert(48%) sepia(35%) saturate(4243%) hue-rotate(1deg) brightness(100%) contrast(103%);
+}
+
+.titlebar {
+    font-family: var(--sans);
+}
+
+.window-appicon {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 1px;
+    background-size: 100% !important;
+}
+
+.current.container {
+    display: grid;
+    grid-template-areas: 'img left right' 'img control right';
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 90% 10%;
+    background-color: var(--lightGrey);
+}
+
+.current.img {
+    grid-area: img;
+
+}
+
+#currentimg {
+    width: 100%;
+    display: block;
+    min-height: 100%;
+}
+
+.current.program {
+    grid-area: left;
+}
+
+.current.station {
+    grid-area: right;
+}
+
+.invisible {
+    height: 0;
+    width: 0;
+}
+
+.controls.container {
+    background-color: var(--darkGrey);
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    font-family: var(--serif);
+    position: sticky;
+    top: -1px;
+}
+
+.controls.container div {
+    text-transform: uppercase;
+    font-size: 2em;
+    height: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    user-select: none;
+    cursor: pointer;
+}
+
+.controls.active {
+    background-color: var(--themeColour);
+    font-weight: 500;
+}
+
+.controls.container div:hover {
+    background-color: var(--themeColour);
+}
+
+.past.playlist.container {
+    overflow-y: scroll;
+}
+
+.current.program {
+    font-family: var(--sans);
+    padding-left: 3em;
+}
+
+.current.program #programname {
+    font-family: var(--serif);
+    font-weight: bold;
+    font-size: 4em;
+    margin-bottom: 0em;
+    margin-top: 0;
+}
+
+.current.program #DJ {
+    font-family: var(--serif);
+    font-weight: bold;
+    font-size: 1.75em;
+    margin-bottom: 0em;
+    margin-top: 0;
+}
+
+.current.program #broadcaster {
+    line-height: 0em;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.current.program #time {
+    line-height: 0em;
+    margin-left: 2em;
+    font-size: 1.5em;
+}
+
+#currentStation {
+    width: 100%;
+}
+
+.audiocontrols {
+    background-color: var(--darkGrey);
+    grid-area: control;
+}
+
+.current.station {
+    background-color: var(--darkBlueGrey);
+}
+
+.audiocontrols div.playbutton {
+    height: 90%;
+    margin-top: 0.5%;
+    margin-left: 1%;
+}
+
+.audiocontrols div.playbutton img{
+    height: 100%;
+}
+
+#stationTimes #stationTime {
+    margin-left: 2em;
+}
+
+#stationTimes {
+    margin-left: 1em;
+    font-size: 1.5em;
+    font-family: var(--sans);
+    color: white;
+    margin-bottom: 0;
+}
+
+.current.station.nextup {
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-template-areas: 'img text';
+}
+
+.current.station.nextup #nextStation {
+    grid-area: img;
+    height: 100%;
+    filter: brightness(0.9) grayscale(40%);
+}
+
+.current.station.nextup .text {
+    grid-area: text;
+    margin-top: 0;
+    font-size: 1em;
+    font-family: var(--sans);
+    color: white;
+    filter: brightness(0.7);
+}
+
+.current.station.nextup .text #nextstationTime {
+    margin-top: 2em;
+}
+
+.audiocontrols .playbutton {
+    background-color: white;
+    border-radius: 100%;
+    width: min-content;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.audiocontrols .playbutton img {
+    filter: var(--themeFilter);
+}
+
+.audiocontrols .volume {
+    display: inline-block;
+    height: 90%;
+    margin-top: 0;
+    margin-left: 1%;
+}
+
+.audiocontrols .volume input{
+    height: 100%;
+    margin-left: 0;
+    cursor: grab
+}
+
+.audiocontrols .volume input:focus {
+    cursor: grabbing
+}
+
+.audiocontrols .volume img {
+    height: 100%;
+    filter: var(--themeFilter);
+}
+
+.audiocontrols .volume .volumebutton {
+    height: 100%;
+    background-color: white;
+    border-radius: 100%;
+    width: fit-content;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.spinning {
+    animation-name: spinning;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    cursor: default;
+}
+
+@keyframes spinning {
+    0% {transform: rotate(180deg);}
+    50% {transform: rotate(90deg);}
+    100% {transform: rotate(0deg);}
+}

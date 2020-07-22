@@ -1,0 +1,61 @@
+{
+    "NPORadio1": {
+        "name": "NPO radio 1",
+        "audiostream": "http://icecast.omroep.nl/radio1-bb-mp3",
+        "playlist-api": "empty.json",
+        "guide-api": "https://www.nporadio1.nl/api/broadcasts",
+        "img": "NPO_Radio_1_logo_2014",
+        "themeColour": "#003576",
+        "themeFilter": "invert(16%) sepia(36%) saturate(4121%) hue-rotate(199deg) brightness(91%) contrast(105%)"
+    },
+
+    "NPORadio2": {
+        "name": "NPO radio 2",
+        "audiostream": "http://icecast.omroep.nl/radio2-bb-mp3",
+        "playlist-api": "https://www.nporadio2.nl/api/tracks",
+        "guide-api": "https://www.nporadio2.nl/api/broadcasts",
+        "img": "NPO_Radio_2_logo_2014",
+        "themeColour": "#d91f27",
+        "themeFilter": "invert(21%) sepia(84%) saturate(3557%) hue-rotate(346deg) brightness(86%) contrast(98%)"
+    },
+
+    "NPO3FM": {
+        "name": "NPO 3FM",
+        "audiostream": "http://icecast.omroep.nl/3fm-bb-mp3",
+        "playlist-api": "https://www.npo3fm.nl/api/tracks",
+        "guide-api": "https://www.npo3fm.nl/api/broadcasts",
+        "img": "NPO_3FM_logo_2020",
+        "themeColour": "#35d327",
+        "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)"
+    },
+
+    "NPORadio4": {
+        "name": "NPO radio 4",
+        "audiostream": "http://icecast.omroep.nl/radio4-bb-mp3",
+        "playlist-api": "https://www.nporadio4.nl/api/tracks",
+        "guide-api": "https://www.nporadio4.nl/api/broadcasts",
+        "img": "NPO_Radio_4_logo_2014",
+        "themeColour": "#77206e",
+        "themeFilter": "invert(17%) sepia(77%) saturate(1660%) hue-rotate(280deg) brightness(97%) contrast(97%)"
+    },
+
+    "NPORadio5": {
+        "name": "NPO radio 5",
+        "audiostream": "http://icecast.omroep.nl/radio5-bb-mp3",
+        "playlist-api": "https://www.nporadio5.nl/api/tracks",
+        "guide-api": "https://www.nporadio5.nl/api/broadcasts",
+        "img": "NPO_Radio_5_logo_2016",
+        "themeColour": "#fdb912",
+        "themeFilter": "invert(73%) sepia(51%) saturate(1341%) hue-rotate(349deg) brightness(103%) contrast(98%)"
+    },
+
+    "NPOFunX": {
+        "name": "NPO FunX",
+        "audiostream": "http://icecast.omroep.nl/funx-bb-mp3",
+        "playlist-api": "https://www.funx.nl/api/tracks",
+        "guide-api": "https://www.funx.nl/api/broadcasts",
+        "img": "NPO_funX_logo_2014",
+        "themeColour": "#e60082",
+        "themeFilter": "invert(19%) sepia(84%) saturate(5246%) hue-rotate(314deg) brightness(86%) contrast(113%)"
+    }
+}

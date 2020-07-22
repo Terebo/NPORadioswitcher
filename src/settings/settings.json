@@ -1,0 +1,691 @@
+{
+  "volume": "50",
+  "timetable": [
+    [
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          0,
+          0
+        ],
+        "endtime": [
+          4,
+          0
+        ]
+      },
+      {
+        "station": "NPO3FM",
+        "starttime": [
+          4,
+          0
+        ],
+        "endtime": [
+          6,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          6,
+          0
+        ],
+        "endtime": [
+          9,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          9,
+          0
+        ],
+        "endtime": [
+          10,
+          30
+        ]
+      },
+      {
+        "station": "NPORadio5",
+        "starttime": [
+          10,
+          30
+        ],
+        "endtime": [
+          12,
+          0
+        ]
+      },
+      {
+        "station": "NPOFunX",
+        "starttime": [
+          12,
+          0
+        ],
+        "endtime": [
+          16,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          16,
+          0
+        ],
+        "endtime": [
+          18,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio5",
+        "starttime": [
+          18,
+          0
+        ],
+        "endtime": [
+          19,
+          30
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          19,
+          30
+        ],
+        "endtime": [
+          20,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          20,
+          0
+        ],
+        "endtime": [
+          24,
+          0
+        ]
+      }
+    ],
+    [
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          0,
+          0,
+          0
+        ],
+        "endtime": [
+          4,
+          0,
+          0
+        ]
+      },
+      {
+        "station": "NPO3FM",
+        "starttime": [
+          4,
+          0
+        ],
+        "endtime": [
+          6,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          6,
+          0
+        ],
+        "endtime": [
+          9,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          9,
+          0
+        ],
+        "endtime": [
+          10,
+          30
+        ]
+      },
+      {
+        "station": "NPORadio5",
+        "starttime": [
+          10,
+          30
+        ],
+        "endtime": [
+          12,
+          0
+        ]
+      },
+      {
+        "station": "NPOFunX",
+        "starttime": [
+          12,
+          0
+        ],
+        "endtime": [
+          16,
+          45
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          16,
+          45
+        ],
+        "endtime": [
+          18,
+          0
+        ]
+      },
+      {
+        "station": "NPO3FM",
+        "starttime": [
+          18,
+          0
+        ],
+        "endtime": [
+          19,
+          30
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          19,
+          30
+        ],
+        "endtime": [
+          20,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          20,
+          0
+        ],
+        "endtime": [
+          24,
+          0
+        ]
+      }
+    ],
+    [
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          0,
+          0,
+          0
+        ],
+        "endtime": [
+          4,
+          0,
+          0
+        ]
+      },
+      {
+        "station": "NPO3FM",
+        "starttime": [
+          4,
+          0
+        ],
+        "endtime": [
+          6,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          6,
+          0
+        ],
+        "endtime": [
+          7,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          7,
+          0
+        ],
+        "endtime": [
+          8,
+          45
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          8,
+          45
+        ],
+        "endtime": [
+          18,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio5",
+        "starttime": [
+          18,
+          0
+        ],
+        "endtime": [
+          19,
+          30
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          19,
+          30
+        ],
+        "endtime": [
+          20,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          20,
+          0
+        ],
+        "endtime": [
+          24,
+          0
+        ]
+      }
+    ],
+    [
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          0,
+          0,
+          0
+        ],
+        "endtime": [
+          4,
+          0,
+          0
+        ]
+      },
+      {
+        "station": "NPO3FM",
+        "starttime": [
+          4,
+          0
+        ],
+        "endtime": [
+          6,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          6,
+          0
+        ],
+        "endtime": [
+          7,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          7,
+          0
+        ],
+        "endtime": [
+          8,
+          45
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          8,
+          45
+        ],
+        "endtime": [
+          18,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio5",
+        "starttime": [
+          18,
+          0
+        ],
+        "endtime": [
+          19,
+          30
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          19,
+          30
+        ],
+        "endtime": [
+          20,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          20,
+          0
+        ],
+        "endtime": [
+          24,
+          0
+        ]
+      }
+    ],
+    [
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          0,
+          0,
+          0
+        ],
+        "endtime": [
+          4,
+          0,
+          0
+        ]
+      },
+      {
+        "station": "NPO3FM",
+        "starttime": [
+          4,
+          0
+        ],
+        "endtime": [
+          6,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          6,
+          0
+        ],
+        "endtime": [
+          7,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          7,
+          0
+        ],
+        "endtime": [
+          8,
+          45
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          8,
+          45
+        ],
+        "endtime": [
+          18,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio5",
+        "starttime": [
+          18,
+          0
+        ],
+        "endtime": [
+          19,
+          30
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          19,
+          30
+        ],
+        "endtime": [
+          20,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          20,
+          0
+        ],
+        "endtime": [
+          24,
+          0
+        ]
+      }
+    ],
+    [
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          0,
+          0,
+          0
+        ],
+        "endtime": [
+          4,
+          0,
+          0
+        ]
+      },
+      {
+        "station": "NPO3FM",
+        "starttime": [
+          4,
+          0
+        ],
+        "endtime": [
+          6,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          6,
+          0
+        ],
+        "endtime": [
+          7,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          7,
+          0
+        ],
+        "endtime": [
+          8,
+          45
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          8,
+          45
+        ],
+        "endtime": [
+          18,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio5",
+        "starttime": [
+          18,
+          0
+        ],
+        "endtime": [
+          19,
+          30
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          19,
+          30
+        ],
+        "endtime": [
+          20,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          20,
+          0
+        ],
+        "endtime": [
+          24,
+          0
+        ]
+      }
+    ],
+    [
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          0,
+          0,
+          0
+        ],
+        "endtime": [
+          4,
+          0,
+          0
+        ]
+      },
+      {
+        "station": "NPO3FM",
+        "starttime": [
+          4,
+          0
+        ],
+        "endtime": [
+          6,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          6,
+          0
+        ],
+        "endtime": [
+          7,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          7,
+          0
+        ],
+        "endtime": [
+          8,
+          45
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          8,
+          45
+        ],
+        "endtime": [
+          18,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio5",
+        "starttime": [
+          18,
+          0
+        ],
+        "endtime": [
+          19,
+          30
+        ]
+      },
+      {
+        "station": "NPORadio1",
+        "starttime": [
+          19,
+          30
+        ],
+        "endtime": [
+          20,
+          0
+        ]
+      },
+      {
+        "station": "NPORadio2",
+        "starttime": [
+          20,
+          0
+        ],
+        "endtime": [
+          24,
+          0
+        ]
+      }
+    ]
+  ]
+}
