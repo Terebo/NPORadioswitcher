@@ -1,12 +1,22 @@
+@font-face {
+    font-family:NPO Regular;
+    src:local("NPO Regular"),
+    url(https://over.npo.nl/fonts/npo/NPOSans-Regular-v101.woff) format("woff");
+    font-style:normal;
+    font-weight:400
+ }
+
 :root {
     --themeColour: #ff6d00;
     --NPOOrange: #ff6d00;
     --lightGrey: #e6e6e6;
     --darkBlueGrey: #262d35;
     --darkGrey: #4c4c4c; 
-    --serif: 'Roboto Slab', sans-serif;
+    --midGrey: #999999;
+    --serif: 'NPO Regular', sans-serif;
     --sans: 'DM Sans', sans-serif;
     --themeFilter: invert(48%) sepia(35%) saturate(4243%) hue-rotate(1deg) brightness(100%) contrast(103%);
+    --npoFilter: invert(62%) sepia(82%) saturate(4378%) hue-rotate(357deg) brightness(97%) contrast(107%);
 }
 
 .titlebar {
@@ -50,6 +60,7 @@
 .invisible {
     height: 0;
     width: 0;
+    display: none;
 }
 
 .controls.container {
@@ -58,20 +69,23 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-family: var(--serif);
     position: sticky;
     top: -1px;
 }
 
 .controls.container div {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
+    display: flex;
+    align-items: center;
     font-size: 2em;
     height: 100%;
     padding-left: 1em;
     padding-right: 1em;
     user-select: none;
     cursor: pointer;
+    vertical-align: middle;
 }
 
 .controls.active {
@@ -81,10 +95,6 @@
 
 .controls.container div:hover {
     background-color: var(--themeColour);
-}
-
-.past.playlist.container {
-    overflow-y: scroll;
 }
 
 .current.program {
@@ -127,6 +137,11 @@
 .audiocontrols {
     background-color: var(--darkGrey);
     grid-area: control;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-areas: "leftAC rightAC";
+    height: 100%;
+    max-height: 100%;
 }
 
 .current.station {
@@ -235,4 +250,117 @@
     0% {transform: rotate(180deg);}
     50% {transform: rotate(90deg);}
     100% {transform: rotate(0deg);}
+}
+
+.rightalign {
+    display: inline-block;
+    grid-area: rightAC;
+    height: 57%;
+}
+
+.leftalign {
+    display: block;
+    grid-area: leftAC;
+    height: 57%;
+}
+div.rightbutton {
+    height: 90%;
+    margin-top: 0.5%;
+    float: right;
+}
+
+div.rightbutton img{
+    height: 100%;
+}
+
+div.rightbutton img {
+    filter: var(--themeFilter);
+}
+
+div.rightbutton {
+    background-color: white;
+    border-radius: 100%;
+    width: min-content;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.infWindow {
+    position: absolute;
+    background-color: var(--midGrey);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 10;
+    display: none;
+}
+
+.close {
+    background-color: white;
+    border-radius: 100%;
+    height: 2.5em;
+    width: min-content;
+    margin-top: 1em;
+    margin-left: calc(100vw - 3.5em);
+    cursor: pointer;
+    position: absolute;
+}
+
+.aboutWindow .close img {
+    height: 100%;
+    filter: var(--themeFilter);
+    transition: transform 0.5s;
+}
+
+.settingsWindow .close img {
+    height: 100%;
+    filter: var(--npoFilter);
+    transition: transform 0.5s;
+}
+
+.close:hover img {
+    transform: rotate(180deg);
+}
+
+.aboutWindow .container {
+    background-color: white;
+    height: 80%;
+    width: 80%;
+    margin-left: 7.5%;
+    margin-top: 5%;
+    border-radius: 2em;
+    padding-top: 1%;
+    padding-lefT: 1%;
+    overflow-y: auto;
+}
+
+.aboutWindow .container::-webkit-scrollbar {
+    display: none;
+  }
+
+.closeWrapper {
+    position: relative;
+    height: 0;
+    width: 0;
+}
+
+.aboutWindow .container p,.aboutWindow .container a {
+    font-family: var(--serif);
+    text-decoration: none;
+    color: black;
+}
+
+.aboutWindow .container a:hover {
+    color: var(--NPOOrange);
+}
+
+.aboutWindow .container a img {
+    height: 4em;
+}
+
+.aboutWindow .container a {
+    font-size: 2em;
+    font-size: var(--sans);
+
 }

@@ -3,6 +3,7 @@ const Electron = require('electron');
 const $ = require('jquery');
 const fs = require('fs');
 const { start } = require('repl');
+const { electron } = require('process');
 var Bar;
 var station = "NPORadio2";
 const stations = require(__dirname + "/stations.json");
@@ -94,15 +95,15 @@ function updateGuide(station) {
 
             document.title = stations[station].name + " - " + response.data[0].title;
             Bar.updateTitle();
-            /*const guideContainer = document.getElementById('guideContainer');
-            guideContainer.innerHTML = ""
+            const guideContainer = document.getElementById('guideContainer');
+            guideContainer.innerHTML = "";
             response.data.forEach((element, index) => {
                 console.log(element);
                 if (index !== 0) {
                     const startTime = parseInt((element.startdatetime).split('T')[1].split(':')[0]) * 60 + parseInt((element.startdatetime).split('T')[1].split(':')[1]);
                     const stationEndTime = parseInt(settings.timetable[day][currentStationI].endtime[0]) * 60 + parseInt(settings.timetable[day][currentStationI].endtime[1]);
                     const stationstartTime = parseInt(settings.timetable[day][currentStationI].starttime[0]) * 60 + parseInt(settings.timetable[day][currentStationI].starttime[1]);
-                    console.log(startTime, stationEndTime)
+                    console.log(startTime, stationEndTime);
                     if (startTime <= stationEndTime && startTime >= stationstartTime) {
                         var container = document.createElement('div');
                         container.className = "guide container";
@@ -122,9 +123,9 @@ function updateGuide(station) {
                         p.appendChild(span3);
                         guideContainer.appendChild(p);
                     }
-                }*/
-        }
-    });
+                }
+            });
+    }});
 }
 
 function changeTab(element) {
@@ -137,7 +138,10 @@ function counter() {
 var nextDate = new Date();
 if (nextDate.getMinutes() === 00 || nextDate.getMinutes() === 15 || nextDate.getMinutes() === 30 || nextDate.getMinutes() === 45) { // You can check for seconds here too
     console.log(nextDate);
-    callEveryHour(nextDate)
+    callEveryHour(nextDate);
+    setTimeout(() => {
+        counter()
+    }, 61000);
 } else {
     if (nextDate.getMinutes() >= 45) {
         nextDate.setHours(nextDate.getHours() + 1);
@@ -205,3 +209,68 @@ const lineBinder = () => {
 
 window.addEventListener('offline', lineBinder);
 window.addEventListener('online', lineBinder);
+
+async function openAbout(reason) {
+    var opacity;
+    var changer;
+    About = document.getElementById('aboutWindow');
+    AboutInner = document.getElementById('aboutContainer');
+    body = document.querySelector('.container-after-titlebar');
+    body.scrollTo(0,0);
+    if (reason === "open") {
+        opacity = 0;
+        changer = 1;
+        body.style.overflowY = "hidden";
+        About.style.display = "block";
+    }
+    if (reason === "close") {
+        opacity = 100;
+        changer = -1;
+    }
+    var timer = setInterval(() => {
+        opacity = opacity + changer;
+        About.style.opacity = (opacity * 5) / 100;
+        if(opacity === 100 || opacity === 0) {
+            if (reason === "close") {
+                About.style.display = "none";
+                body.style.overflowY = "auto";
+            }
+            clearInterval(timer);
+        }
+    }, 3);
+}
+
+async function openSettings(reason) {
+    window.scrollTo(0, 0);
+    var opacity;
+    var changer;
+    Settings = document.getElementById('settingsWindow');
+    SettingsInner = document.getElementById('settingsContainer');
+    body = document.querySelector('.container-after-titlebar');
+    if (reason === "open") {
+        opacity = 0;
+        changer = 1;
+
+        body.style.overflow = "hidden";
+        Settings.style.display = "block";
+    }
+    if (reason === "close") {
+        opacity = 100;
+        changer = -1;
+    }
+    var timer = setInterval(() => {
+        opacity = opacity + changer;
+        Settings.style.opacity = (opacity * 5) / 100;
+        if(opacity === 100 || opacity === 0) {
+            if (reason === "close") {
+                Settings.style.display = "none";
+                body.style.overflow = "auto";
+            }
+            clearInterval(timer);
+        }
+    }, 1);
+}
+
+function externalOpener(url) {
+    Electron.shell.openExternal(url);
+}

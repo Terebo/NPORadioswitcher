@@ -7,6 +7,41 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Roboto+Slab&display=swap" rel="stylesheet"> 
 </head>
 <body onload="bar()">
+    <div class="aboutWindow infWindow" id="aboutWindow">
+        <div class="closeWrapper">
+        <div class="close" onclick="openAbout('close')">
+            <img src="img/icon/close-small.svg">
+        </div>
+        </div>
+        <div class="container" id="aboutContainer">
+            <p style="margin-bottom: 0; margin-top: 0; font-size: 3em; font-weight: 600;">Over deze app</p>
+            <p>
+                <span style="font-size: 1.5em">Met de NPO Radio Switcher kan je automatisch wisselen tussen NPO radio zenders. Wil je bijvoorbeeld om 2 uur naar NPO radio 1 luisteren maar om 3 naar NPO3FM, dan kan deze app dat automatisch voor je doen.</span> <br>
+                NPO Radio Switcher is geen commercieel project en is volledig gratis. geld verdienen is nooit een intentie geweest en zal er nooit een worden. <br>
+                Dit project heeft geen link met NPO of enig van de omroepen die daarbij horen. Alle afbeeldingen, logos en actuele informatie is van en door de NPO en/of de daartoe behorende omroepen. <br>
+                NPO Radio Switcher is op geen enkele manier eigendom van of verwant aan de NPO. <br>
+                Er wordt geen enkele garantie gegeven op NPO Radio Switcher. <br>
+                NPO Radio Switcher is volledig gratis en open source met een MIT licentie, de achterliggende API (van de NPO) is niet open source.
+            </p>
+            <p style="margin-bottom: 0; font-size: 2em;">Alle afbeeldingen, logos en actuele informatie door:</p>
+            <a href="javascript: externalOpener('https://over.npo.nl')"><img src="img/NPO_logo_2014.svg"> Nederlandse Publieke Omroep</a>
+            <p style="margin-bottom: 0; font-size: 2em;">Opensource broncode te vinden op:</p>
+            <a href="javascript: externalOpener('https://www.github.com/Terebo/NPORadioSwitcher')"><img src="img/github_logo_2020.svg"> Github</a>
+            <p style="margin-bottom: 0; font-size: 2em;">Gemaakt door:</p>
+            <a href="javascript: externalOpener('https://www.github.com/Terebo/NPORadioSwitcher')"><img src="img/Terebo_logo_2020.svg"> Terebo</a>
+        </div>
+    </div>
+
+    <div class="settingsWindow infWindow" id="settingsWindow">
+        <div class="closeWrapper">
+        <div class="close" onclick="openSettings('close')">
+            <img src="img/icon/close-small.svg">
+        </div>
+        </div>
+        <div class="container">
+            
+        </div>
+    </div>
     <div class="current container">
         <div class="current img">
             <img id="currentimg" src="img/NPO_Radio_logo_2014.svg">
@@ -28,12 +63,22 @@
             </div>
         </div>
         <div class="audiocontrols">
+            <div class="leftalign">
             <div class="playbutton" id="playbutton" onclick="changedPlayState('pause')"><img id="playbuttonimg" src="img/icon/pause-small.svg"></div>
             <div class="volume">
                 <div class="volumebutton" onclick="changevolume('0')" id="volumebuttoncontainer">
                     <img src="img/icon/volume-1-small.svg" id="volumebutton">
                 </div>
                 <input id="volumeSlider" type="range" value="100" onchange="changevolume(this.value)">
+            </div>
+            </div>
+            <div class="rightalign">
+                <div class="rightbutton" onclick="openAbout('open')">
+                    <img src="img/icon/info-small.svg">
+                </div>
+                <div class="rightbutton" onclick="openSettings('open')">
+                    <img src="img/icon/settings-small.svg">
+                </div>
             </div>
         </div>
     </div>
@@ -42,7 +87,7 @@
         <div class="controls" onclick="changeTab(this)">Gedraaid</div>
     </div>
     <div class="past">
-        <div class="past playlist container">
+        <div class="past playlist container invisible">
             <button onclick="changeChanel('NPORadio1')"><img src="img/NPO_Radio_1_logo_2014.svg"></button>
             <button onclick="changeChanel('NPORadio2')"><img src="img/NPO_Radio_2_logo_2014.svg"></button>
             <button onclick="changeChanel('NPO3FM')"><img src="img/NPO_3FM_logo_2020.svg"></button>
@@ -50,7 +95,7 @@
             <button onclick="changeChanel('NPORadio5')"><img src="img/NPO_Radio_5_logo_2016.svg"></button>
             <button onclick="changeChanel('NPOFunX')"><img src="img/NPO_funX_logo_2014.svg"></button>
         </div>
-        <div class="past guide container invisible" id="guideContainer">
+        <div class="past guide container" id="guideContainer">
         </div>
     </div>
     <video controls id="soundplayer" autoplay class="invisible" src="http://icecast.omroep.nl/radio2-bb-mp3">
