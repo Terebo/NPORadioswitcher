@@ -95,15 +95,13 @@ function updateGuide(station) {
 
             document.title = stations[station].name + " - " + response.data[0].title;
             Bar.updateTitle();
-            const guideContainer = document.getElementById('guideContainer');
+            const guideContainer = document.getElementById('guide');
             guideContainer.innerHTML = "";
             response.data.forEach((element, index) => {
-                console.log(element);
                 if (index !== 0) {
                     const startTime = parseInt((element.startdatetime).split('T')[1].split(':')[0]) * 60 + parseInt((element.startdatetime).split('T')[1].split(':')[1]);
                     const stationEndTime = parseInt(settings.timetable[day][currentStationI].endtime[0]) * 60 + parseInt(settings.timetable[day][currentStationI].endtime[1]);
                     const stationstartTime = parseInt(settings.timetable[day][currentStationI].starttime[0]) * 60 + parseInt(settings.timetable[day][currentStationI].starttime[1]);
-                    console.log(startTime, stationEndTime);
                     if (startTime <= stationEndTime && startTime >= stationstartTime) {
                         var container = document.createElement('div');
                         container.className = "guide container";
@@ -124,14 +122,33 @@ function updateGuide(station) {
                         guideContainer.appendChild(p);
                     }
                 }
-            });
+            }); 
     }});
+    $.ajax({
+        type: "GET",
+        url: stations[station]["playlist-api"],
+        dataType: "json",
+        success: function (response) {
+            console.log(response.data)
+            const songTitle = document.getElementById('songtitle');
+            const songArtist = document.getElementById('songartist');
+            console.log(songArtist, songTitle)
+            songTitle.innerText = response.data[0].title;
+            songArtist.innerText = response.data[0].artist;
+        }
+    });
 }
 
 function changeTab(element) {
-    const oldelement = document.querySelector('.active');
-    oldelement.classList.remove('active')
-    element.classList.add('active');
+    if (!element.classList.value.includes("active")) {
+        const oldelement = document.querySelector('.active');
+        oldelement.classList.remove('active')
+        element.classList.add('active');
+        const thisElement = document.getElementById(element.dataset.name);
+        const otherElement = thisElement.nextElementSibling || thisElement.previousElementSibling;
+        thisElement.classList.add("invisible");
+        otherElement.classList.remove("invisible");
+    }
 }
 
 function counter() {
@@ -220,7 +237,7 @@ async function openAbout(reason) {
     if (reason === "open") {
         opacity = 0;
         changer = 1;
-        body.style.overflowY = "hidden";
+        body.style.overflow = "hidden";
         About.style.display = "block";
     }
     if (reason === "close") {

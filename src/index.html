@@ -83,11 +83,11 @@
         </div>
     </div>
     <div class="controls container">
-        <div class="controls active" onclick="changeTab(this)">Gids</div>
-        <div class="controls" onclick="changeTab(this)">Gedraaid</div>
+        <div class="controls active" onclick="changeTab(this)" data-name="guide">Gids</div>
+        <div class="controls" onclick="changeTab(this)" data-name="played">Gedraaid</div>
     </div>
     <div class="past">
-        <div class="past playlist container invisible">
+        <div class="past playlist container" id="played">
             <button onclick="changeChanel('NPORadio1')"><img src="img/NPO_Radio_1_logo_2014.svg"></button>
             <button onclick="changeChanel('NPORadio2')"><img src="img/NPO_Radio_2_logo_2014.svg"></button>
             <button onclick="changeChanel('NPO3FM')"><img src="img/NPO_3FM_logo_2020.svg"></button>
@@ -95,7 +95,7 @@
             <button onclick="changeChanel('NPORadio5')"><img src="img/NPO_Radio_5_logo_2016.svg"></button>
             <button onclick="changeChanel('NPOFunX')"><img src="img/NPO_funX_logo_2014.svg"></button>
         </div>
-        <div class="past guide container" id="guideContainer">
+        <div class="past guide container invisible" id="guide">
         </div>
     </div>
     <video controls id="soundplayer" autoplay class="invisible" src="http://icecast.omroep.nl/radio2-bb-mp3">

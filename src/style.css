@@ -13,6 +13,7 @@
     --darkBlueGrey: #262d35;
     --darkGrey: #4c4c4c; 
     --midGrey: #999999;
+    --darkBlueGreyHighlight: #3d4855;
     --serif: 'NPO Regular', sans-serif;
     --sans: 'DM Sans', sans-serif;
     --themeFilter: invert(48%) sepia(35%) saturate(4243%) hue-rotate(1deg) brightness(100%) contrast(103%);
@@ -364,3 +365,39 @@ div.rightbutton {
     font-size: var(--sans);
 
 }
+
+::-webkit-scrollbar {
+    width: 1%;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: var(--lightGrey);
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--darkBlueGrey);
+    box-sizing: border-box;
+    border: 2px solid var(--midGrey);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--darkBlueGreyHighlight);
+  }
+
+  @media only all and (max-width: 1034px) {
+    .current.container {
+        display: grid;
+        grid-template-areas: 'img left' 'img control';
+        grid-template-columns: calc(100%/3) calc(calc(100%/3)*2) 0%;
+        grid-template-rows: 90% 10%;
+        background-color: var(--lightGrey);
+    }
+
+    .current.station {
+        display: none;
+        grid-area: none;
+    }
+  }
