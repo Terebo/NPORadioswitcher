@@ -48,4 +48,5 @@ Menu.setApplicationMenu(menu);
   }
 }
 
+console.log(app)
 app.whenReady().then(createWindow);

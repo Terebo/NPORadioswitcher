@@ -401,3 +401,96 @@ div.rightbutton {
         grid-area: none;
     }
   }
+
+.settings.container {
+    display: grid;
+    grid-template-columns: minmax(auto, 25%) auto;
+    grid-template-areas: 'SettingsLeft SettingsRight';
+    height: 100%;
+}
+
+.settings.right {
+    background-color: white;
+}
+
+.settings.left {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.settings.left .container {
+    margin-top: 10%;
+    margin-left: 10% !important;
+    padding-left: 10%;
+    width: max-content;
+}
+
+.settings.left .container div {
+    width: max-content;
+    font-family: var(--serif);
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+}
+
+.settings.left .container div:hover {
+    background-color: rgba(64, 70, 77, 0.178);
+}
+
+.settings.left .container div.active:hover {
+    background-color: rgba(116,127,141,0.24);
+}
+
+.settings.left .container div.active {
+    background-color: rgba(116,127,141,0.24);
+}
+
+.settings div .header {
+    font-family: var(--sans);
+    font-size: 4em;
+    margin-top: 0.1em;
+}
+
+.settings.checkbox {
+    height: 3em;
+    margin-top: 0;
+}
+
+.settings.label {
+    font-size: 3em;
+}
+
+.save {
+    background-color: var(--darkGrey);
+    height: 2.5em;
+    width: max-content;
+    margin-top: calc(100vh - 3.5em - 30px);
+    justify-self: center;
+    cursor: pointer;
+    position: absolute;
+}
+
+.saveWrapper {
+    width: 100%;
+    display: flex;
+    position: relative;
+    height: 0;
+    width: 0;
+}
+
+.GuideElement {
+    width: 95vw;
+    padding-left: 5vw;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: 'leftGuide rightGuide';
+}
+
+.GuideElement img {
+    grid-area: leftGuide;
+    height: 100%;
+}
+
+.GuideElement p {
+    grid-area: rightGuide;
+}

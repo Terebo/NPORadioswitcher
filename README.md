@@ -13,7 +13,7 @@ Have you ever felt like wanting to listen to NPO 3FM at 4, and NPO Radio 1 at 5.
 
 # what's in the program at the moment and what i have planned
  - [x] audio stream for every station
- - [ ] audio streams for themechanels
+ - [x] audio streams for themechanels
  - [x] API info for current program
  - [ ] API info for next programs with dynamic changing of station api from timetable
  - [x] automagical switching of stations

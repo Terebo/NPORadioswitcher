@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Roboto+Slab&display=swap" rel="stylesheet"> 
 </head>
 <body onload="bar()">
+    <!--about-->
     <div class="aboutWindow infWindow" id="aboutWindow">
         <div class="closeWrapper">
         <div class="close" onclick="openAbout('close')">
@@ -31,15 +32,44 @@
             <a href="javascript: externalOpener('https://www.github.com/Terebo/NPORadioSwitcher')"><img src="img/Terebo_logo_2020.svg"> Terebo</a>
         </div>
     </div>
-
+    <!--settings-->
     <div class="settingsWindow infWindow" id="settingsWindow">
         <div class="closeWrapper">
         <div class="close" onclick="openSettings('close')">
             <img src="img/icon/close-small.svg">
         </div>
         </div>
-        <div class="container">
-            
+        <div class="saveWrapper">
+            <div class="save">
+                <p>je hebt instellingen die nog niet zijn opgeslagen</p>
+        </div>
+        </div>
+        <div class="container settings">
+            <div class="settings left">
+                <div class="container">
+                    <div class="active">
+                        Verbindingen
+                    </div>
+                    <div class="inactive">
+                        Rooster
+                    </div>
+                </div>
+            </div>
+            <div class="settings right">
+                <div id="Connections">
+                <p class="header">Verbindingen</p>
+                    <input class="settings checkbox" type="checkbox" checked="true" data-goal="discord" onchange = "settingsSwitch(this, this.dataset.goal, this.checked)">
+                    <label class="settings label">discord (beta)</label>
+                    
+                </div>
+                <div class="timetable">
+                <p class="header">Rooster</p>
+
+                <div id="table">
+
+                    </div>
+                  </div>
+            </div>
         </div>
     </div>
     <div class="current container">
@@ -82,20 +112,15 @@
             </div>
         </div>
     </div>
-    <div class="controls container">
+    <div class="controls container" id="tabControls">
         <div class="controls active" onclick="changeTab(this)" data-name="guide">Gids</div>
         <div class="controls" onclick="changeTab(this)" data-name="played">Gedraaid</div>
     </div>
     <div class="past">
-        <div class="past playlist container" id="played">
-            <button onclick="changeChanel('NPORadio1')"><img src="img/NPO_Radio_1_logo_2014.svg"></button>
-            <button onclick="changeChanel('NPORadio2')"><img src="img/NPO_Radio_2_logo_2014.svg"></button>
-            <button onclick="changeChanel('NPO3FM')"><img src="img/NPO_3FM_logo_2020.svg"></button>
-            <button onclick="changeChanel('NPORadio4')"><img src="img/NPO_Radio_4_logo_2014.svg"></button>
-            <button onclick="changeChanel('NPORadio5')"><img src="img/NPO_Radio_5_logo_2016.svg"></button>
-            <button onclick="changeChanel('NPOFunX')"><img src="img/NPO_funX_logo_2014.svg"></button>
+        <div class="past guide container" id="guide">
         </div>
-        <div class="past guide container invisible" id="guide">
+        <div class="past playlist container invisible" id="played">
+            
         </div>
     </div>
     <video controls id="soundplayer" autoplay class="invisible" src="http://icecast.omroep.nl/radio2-bb-mp3">
