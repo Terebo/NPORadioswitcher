@@ -94,6 +94,10 @@
     font-weight: 500;
 }
 
+.controls:not(.active) {
+    color: white;
+}
+
 .controls.container div:hover {
     background-color: var(--themeColour);
 }
@@ -479,18 +483,30 @@ div.rightbutton {
 }
 
 .GuideElement {
-    width: 95vw;
-    padding-left: 5vw;
+    width: 90vw;
+    margin-left: 5vw;
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-areas: 'leftGuide rightGuide';
+    margin-top: 1vh;
+    background-color: var(--lightGrey);
 }
 
 .GuideElement img {
     grid-area: leftGuide;
-    height: 100%;
+    max-width: 100%;
 }
 
 .GuideElement p {
     grid-area: rightGuide;
+}
+
+.GuideElement p span:nth-of-type(1) {
+    font-family: var(--serif);
+    font-size: 2em;
+}
+
+.GuideElement p span {
+    font-family: var(--sans);
+    font-size: 1.5em;
 }

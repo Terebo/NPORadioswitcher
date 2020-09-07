@@ -151,7 +151,7 @@ function updateGuide(station) {
             console.log(songArtist, songTitle)
             songTitle.innerText = response.data[0].title;
             songArtist.innerText = response.data[0].artist || "onbekend";
-            var newSong = {"title": (response.data[0].title), "artist": (response.data[0].artist), "start": (response.data[0].startdatetime), "end":(response.data[0].enddatetime), "img": (response.data[0].image_url_200x200),"stationName": stations[station].name, "station": station}
+            var newSong = {"title": (response.data[0].title), "artist": (response.data[0].artist), "start": (response.data[0].startdatetime), "end":(response.data[0].enddatetime), "img": (response.data[1].image_url_200x200),"stationName": stations[station].name, "station": station}
             var longWindedMethodForSomethingStupid = !(newSong.title == (PrevSong || {"title": null}).title && newSong.artist == (PrevSong || {"artist": null}).artist && (PrevSong || {"station": null}).station == newSong.station)
             console.log(longWindedMethodForSomethingStupid, newSong, PrevSong)
             if (longWindedMethodForSomethingStupid) {
@@ -161,7 +161,7 @@ function updateGuide(station) {
                 var img = document.createElement('img');
                 img.src = newSong.img || "img/" + stations[PrevSong.station].img + ".svg";
                 var text = document.createElement('p');
-                text.innerHTML = PrevSong.title + " - " + PrevSong.artist + "<br>" + PrevSong.stationName;
+                text.innerHTML = "<span>" + PrevSong.title + " - " + PrevSong.artist + "</span><br><span>" + PrevSong.start.split('T')[1].substring(0, 5) + " - " + PrevSong.end.split('T')[1].substring(0, 5) + "</span><br><span>" + PrevSong.stationName + "</span>";
                 song.appendChild(img);
                 song.appendChild(text);
                 document.getElementById('played').prepend(song);
