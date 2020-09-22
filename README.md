@@ -1,6 +1,6 @@
 ![Fancy gif](/build/NPO_Radio.gif)
 
-# NPO Radio switcher
+# NPORadioswitcher
  an electron app to automagicly switch between NPO radio channels
  This is not in any way shape or form affiliated with NPO
  At the moment it's proof of concept, it isn't entirely done yet, but i just wanted something to be out here.
@@ -15,10 +15,12 @@ Have you ever felt like wanting to listen to NPO 3FM at 4, and NPO Radio 1 at 5.
  - [x] audio stream for every station
  - [x] audio streams for themechanels
  - [x] API info for current program
- - [ ] API info for next programs with dynamic changing of station api from timetable
+ - [x] Played songs logging
+ - [ ] Guide information that follows your timetable
  - [x] automagical switching of stations
  - [x] information about your timetable of stations
  - [ ] GUI for your timetable/settings
+ - [x] Discord integration(sort of)
  - [ ] more options
 
 
