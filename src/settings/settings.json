@@ -1,6 +1,7 @@
 {
   "volume": "0",
   "discord": false,
+  "startup": true,
   "timetable": [
     [
       {

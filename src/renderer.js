@@ -1,5 +1,5 @@
 const customTitlebar = require('custom-electron-titlebar');
-const Electron = require('electron');
+const {Electron, ipcRenderer} = require('electron');
 const $ = require('jquery');
 const fs = require('fs');
 const { start } = require('repl');
@@ -8,6 +8,7 @@ const DiscordRPC = require('discord-rpc');
 const { Console } = require('console');
 const clientId = '744455530562715699';
 var PrevSong = undefined;
+const mergeImages = require('merge-images');
 /*const spotify = require('./spotify.js');
 console.log(spotify);*/
 var Bar;
@@ -33,9 +34,10 @@ changevolume(settings.volume);
 counter();
 discord();
 document.querySelector('[data-goal="discord"]').checked = settings.discord;
+document.querySelector('[data-goal="startup"]').checked = settings.discord;
 }
 
-Electron.ipcRenderer.on('changedPlayState', function (even, message) {
+Electron.ipcRenderer.on('changedPlayState', function (event, message) {
     changedPlayState(message);
 })
 
@@ -80,8 +82,10 @@ function changeChanel(channel) {
             console.log(station, channel)
             document.documentElement.style.setProperty('--themeColour', stations[channel].themeColour);
             document.documentElement.style.setProperty('--themeFilter', stations[channel].themeFilter);
+            ipcRenderer.send('updateIcon', '/img/icon/modifiers/' + stations[channel].modifier +'.png');
             updateGuide(station);
 }
+
 
 setInterval(() => {
     updateGuide(station);
@@ -375,7 +379,11 @@ function settingsSwitch(element, goal, value) {
             console.log(settings);
             discord();
             break;
-    
+        
+        case "startup":
+            settings.startup = value;
+            fs.writeFileSync(__dirname + '/settings/settings.json', JSON.stringify(settings, null, 2));
+            settings = require(__dirname + "/settings/settings.json");
         default:
             break;
     }

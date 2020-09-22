@@ -1,7 +1,8 @@
 const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
-const { Z_BEST_SPEED } = require('zlib')
-console.log(__dirname)
+const { Z_BEST_SPEED } = require('zlib');
+const { ipcMain } = require('electron');
+var settings = require(__dirname + '/settings/settings.json');
 function createWindow () {
   // Create the browser window.
   const win = new BrowserWindow({
@@ -46,7 +47,20 @@ Menu.setApplicationMenu(menu);
       win.webContents.send('changedPlayState', 'pause');
     }
   }
+
+  ipcMain.on('updateIcon', (event, arg) => {
+    win.setOverlayIcon(
+      __dirname + arg,
+      "Test?");
+  })
 }
+
+if(settings.startup) {
+  console.log("aba");
+}
+
+console.log(settings)
+
 
 console.log(app)
 app.whenReady().then(createWindow);

@@ -51,6 +51,9 @@
                         Verbindingen
                     </div>
                     <div class="inactive">
+                        Algemeen
+                    </div>
+                    <div class="inactive">
                         Rooster
                     </div>
                 </div>
@@ -61,6 +64,11 @@
                     <input class="settings checkbox" type="checkbox" checked="true" data-goal="discord" onchange = "settingsSwitch(this, this.dataset.goal, this.checked)">
                     <label class="settings label">discord (beta)</label>
                     
+                </div>
+                <div id="General">
+                    <p class="header">Algemeen</p>
+                        <input class="settings checkbox" type="checkbox" checked="true" data-goal="startup" onchange = "settingsSwitch(this, this.dataset.goal, this.checked)">
+                        <label class="settings label">Auto start bij opstarten</label>    
                 </div>
                 <div class="timetable">
                 <p class="header">Rooster</p>

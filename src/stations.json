@@ -7,7 +7,8 @@
         "img": "NPO_Radio_1_logo_2014",
         "themeColour": "#003576",
         "themeFilter": "invert(16%) sepia(36%) saturate(4121%) hue-rotate(199deg) brightness(91%) contrast(105%)",
-        "discordImg": "r1"
+        "discordImg": "r1",
+        "modifier": "1"
     },
 
     "NPORadio2": {
@@ -18,7 +19,8 @@
         "img": "NPO_Radio_2_logo_2014",
         "themeColour": "#d91f27",
         "themeFilter": "invert(21%) sepia(84%) saturate(3557%) hue-rotate(346deg) brightness(86%) contrast(98%)",
-        "discordImg": "r2"
+        "discordImg": "r2",
+        "modifier": "2"
     },
 
     "NPO3FM": {
@@ -29,7 +31,8 @@
         "img": "NPO_3FM_logo_2020",
         "themeColour": "#35d327",
         "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)",
-        "discordImg": "3fm"
+        "discordImg": "3fm",
+        "modifier": "3"
     },
 
     "NPORadio4": {
@@ -40,7 +43,8 @@
         "img": "NPO_Radio_4_logo_2014",
         "themeColour": "#77206e",
         "themeFilter": "invert(17%) sepia(77%) saturate(1660%) hue-rotate(280deg) brightness(97%) contrast(97%)",
-        "discordImg": "r4"
+        "discordImg": "r4",
+        "modifier": "4"
     },
 
     "NPORadio5": {
@@ -51,7 +55,8 @@
         "img": "NPO_Radio_5_logo_2016",
         "themeColour": "#fdb912",
         "themeFilter": "invert(73%) sepia(51%) saturate(1341%) hue-rotate(349deg) brightness(103%) contrast(98%)",
-        "discordImg": "r5"
+        "discordImg": "r5",
+        "modifier": "5"
     },
 
     "NPOFunX": {
@@ -62,7 +67,8 @@
         "img": "NPO_funX_logo_2014",
         "themeColour": "#e60082",
         "themeFilter": "invert(19%) sepia(84%) saturate(5246%) hue-rotate(314deg) brightness(86%) contrast(113%)",
-        "discordImg": "fx"
+        "discordImg": "fx",
+        "modifier": "6"
     },
      
     "2S&J": {
@@ -73,7 +79,8 @@
         "img": "NPO_Radio_2_Soul_&_Jazz_logo_2020",
         "themeColour": "#d91f27",
         "themeFilter": "invert(21%) sepia(84%) saturate(3557%) hue-rotate(346deg) brightness(86%) contrast(98%)",
-        "discordImg": "r2sj"
+        "discordImg": "r2sj",
+        "modifier": "2"
     },
 
     "3FMalternative": {
@@ -84,7 +91,8 @@
         "img": "NPO_3FM_alternative_logo_2020",
         "themeColour": "#35d327",
         "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)",
-        "discordImg": "3fma"
+        "discordImg": "3fma",
+        "modifier": "3"
     },
 
     "3FMkx": {
@@ -95,7 +103,8 @@
         "img": "NPO_3FM_kx_logo_2020",
         "themeColour": "#35d327",
         "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)",
-        "discordImg": "3fmk"
+        "discordImg": "3fmk",
+        "modifier": "3"
     },
 
     "4Concerten": {
@@ -106,7 +115,8 @@
         "img": "NPO_Radio_4_concerten_logo_2014",
         "themeColour": "#77206e",
         "themeFilter": "invert(17%) sepia(77%) saturate(1660%) hue-rotate(280deg) brightness(97%) contrast(97%)",
-        "discordImg": "r4c"
+        "discordImg": "r4c",
+        "modifier": "4"
     },
 
     "5sterren": {
@@ -117,6 +127,7 @@
         "img": "NPO_sterrenNL_logo_2016",
         "themeColour": "#263c88",
         "themeFilter": "invert(22%) sepia(14%) saturate(6957%) hue-rotate(208deg) brightness(89%) contrast(92%)",
-        "discordImg": "snl"
+        "discordImg": "snl",
+        "modifier": "7"
     }
 }
