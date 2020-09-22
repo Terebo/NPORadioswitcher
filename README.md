@@ -1,6 +1,6 @@
 ![Fancy gif](/build/NPO_Radio.gif)
 
-# NPORadioswitcher
+# NPO Radio switcher
  an electron app to automagicly switch between NPO radio channels
  This is not in any way shape or form affiliated with NPO
  At the moment it's proof of concept, it isn't entirely done yet, but i just wanted something to be out here.
