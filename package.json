@@ -3,10 +3,7 @@
   "version": "2.0.0",
   "description": "Switches between NPO radio stations automaticly",
   "scripts": {
-    "build": "npx tsc",
-    "watch": "npx tsc -w",
-    "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "start": "npm run build && electron ."
+    "build": "npx tsc; sass 'src/sass/materialize.scss' 'dist/css/materialize.css'"
   },
   "main": "dist/main.js",
   "repository": "https://github.com/electron/electron-quick-start-typescript",
@@ -25,5 +22,7 @@
     "eslint": "^7.3.1",
     "typescript": "^3.9.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "electron-settings": "^4.0.2"
+  }
 }
