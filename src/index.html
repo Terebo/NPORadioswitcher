@@ -7,6 +7,88 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Roboto+Slab&display=swap" rel="stylesheet"> 
 </head>
 <body onload="bar()">
+<<<<<<< Updated upstream
+=======
+    <!--about-->
+    <div class="aboutWindow infWindow" id="aboutWindow">
+        <div class="closeWrapper">
+        <div class="close" onclick="openAbout('close')">
+            <img src="img/icon/close-small.svg">
+        </div>
+        </div>
+        <div class="container" id="aboutContainer">
+            <p style="margin-bottom: 0; margin-top: 0; font-size: 3em; font-weight: 600;">Over deze app</p>
+            <p>
+                <span style="font-size: 1.5em">Met de NPO Radio Switcher kan je automatisch wisselen tussen NPO radio zenders. Wil je bijvoorbeeld om 2 uur naar NPO radio 1 luisteren maar om 3 naar NPO3FM, dan kan deze app dat automatisch voor je doen.</span> <br>
+                NPO Radio Switcher is geen commercieel project en is volledig gratis. geld verdienen is nooit een intentie geweest en zal er nooit een worden. <br>
+                Dit project heeft geen link met NPO of enig van de omroepen die daarbij horen. Alle afbeeldingen, logos en actuele informatie is van en door de NPO en/of de daartoe behorende omroepen. <br>
+                NPO Radio Switcher is op geen enkele manier eigendom van of verwant aan de NPO. <br>
+                Er wordt geen enkele garantie gegeven op NPO Radio Switcher. <br>
+                NPO Radio Switcher is volledig gratis en open source met een MIT licentie, de achterliggende API (van de NPO) is niet open source.
+            </p>
+            <p style="margin-bottom: 0; font-size: 2em;">Alle afbeeldingen, logos en actuele informatie door:</p>
+            <a href="javascript: externalOpener('https://over.npo.nl')"><img src="img/NPO_logo_2014.svg"> Nederlandse Publieke Omroep</a>
+            <p style="margin-bottom: 0; font-size: 2em;">Opensource broncode te vinden op:</p>
+            <a href="javascript: externalOpener('https://www.github.com/Terebo/NPORadioSwitcher')"><img src="img/github_logo_2020.svg"> Github</a>
+            <p style="margin-bottom: 0; font-size: 2em;">Gemaakt door:</p>
+            <a href="javascript: externalOpener('https://www.github.com/Terebo/NPORadioSwitcher')"><img src="img/Terebo_logo_2020.svg"> Terebo</a>
+        </div>
+    </div>
+    <!--settings-->
+    <div class="settingsWindow infWindow" id="settingsWindow">
+        <div class="closeWrapper">
+        <div class="close" onclick="openSettings('close')">
+            <img src="img/icon/close-small.svg">
+        </div>
+        </div>
+        <div class="saveWrapper">
+            <div class="save">
+                <div>
+                    <div>
+                        <p>je hebt instellingen die nog niet zijn opgeslagen</p>
+                        <p>reset</p>
+                        <div>Opslaan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container settings">
+            <div class="settings left">
+                <div class="container">
+                    <div class="active">
+                        Verbindingen
+                    </div>
+                    <div class="inactive">
+                        Algemeen
+                    </div>
+                    <div class="inactive">
+                        Rooster
+                    </div>
+                </div>
+            </div>
+            <div class="settings right">
+                <div id="Connections">
+                <p class="header">Verbindingen</p>
+                    <input class="settings checkbox" type="checkbox" checked="true" data-goal="discord" onchange = "settingsSwitch(this, this.dataset.goal, this.checked)">
+                    <label class="settings label">discord (beta)</label>
+                    
+                </div>
+                <div id="General">
+                    <p class="header">Algemeen</p>
+                        <input class="settings checkbox" type="checkbox" checked="true" data-goal="startup" onchange = "settingsSwitch(this, this.dataset.goal, this.checked)">
+                        <label class="settings label">Auto start bij opstarten</label>    
+                </div>
+                <div class="timetable">
+                <p class="header">Rooster</p>
+
+                <div id="table">
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> Stashed changes
     <div class="current container">
         <div class="current img">
             <img id="currentimg" src="img/NPO_Radio_logo_2014.svg">

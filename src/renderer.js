@@ -68,6 +68,15 @@ function changeChanel(channel) {
             station = channel;
             document.documentElement.style.setProperty('--themeColour', stations[channel].themeColour);
             document.documentElement.style.setProperty('--themeFilter', stations[channel].themeFilter);
+<<<<<<< Updated upstream
+=======
+            if(settings.icon) {
+            ipcRenderer.send('updateIcon', ['/img/icon/modifiers/' + stations[channel].modifier +'.png', stations[channel].name]);
+            }
+            else {
+            ipcRenderer.send('updateIcon', false);
+            }
+>>>>>>> Stashed changes
             updateGuide(station);
 }
 

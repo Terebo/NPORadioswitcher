@@ -46,6 +46,24 @@ Menu.setApplicationMenu(menu);
       win.webContents.send('changedPlayState', 'pause');
     }
   }
+<<<<<<< Updated upstream
+=======
+
+  ipcMain.on('updateIcon', (event, arg) => {
+    if (arg == false) {
+      win.setOverlayIcon(null, "");
+    }
+    else {
+    win.setOverlayIcon(
+      __dirname + arg[0],
+     arg[1]);
+    }
+  })
+}
+
+if(settings.startup) {
+  console.log("aba");
+>>>>>>> Stashed changes
 }
 
 app.whenReady().then(createWindow);

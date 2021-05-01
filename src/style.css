@@ -235,4 +235,289 @@
     0% {transform: rotate(180deg);}
     50% {transform: rotate(90deg);}
     100% {transform: rotate(0deg);}
+<<<<<<< Updated upstream
+=======
+}
+
+.rightalign {
+    display: inline-block;
+    grid-area: rightAC;
+    height: 57%;
+}
+
+.leftalign {
+    display: block;
+    grid-area: leftAC;
+    height: 57%;
+}
+div.rightbutton {
+    height: 90%;
+    margin-top: 0.5%;
+    float: right;
+}
+
+div.rightbutton img{
+    height: 100%;
+}
+
+div.rightbutton img {
+    filter: var(--themeFilter);
+}
+
+div.rightbutton {
+    background-color: white;
+    border-radius: 100%;
+    width: min-content;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.infWindow {
+    position: absolute;
+    background-color: var(--midGrey);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 10;
+    display: none;
+}
+
+.close {
+    background-color: white;
+    border-radius: 100%;
+    height: 2.5em;
+    width: min-content;
+    margin-top: 1em;
+    margin-left: calc(100vw - 3.5em);
+    cursor: pointer;
+    position: absolute;
+}
+
+.aboutWindow .close img {
+    height: 100%;
+    filter: var(--themeFilter);
+    transition: transform 0.5s;
+}
+
+.settingsWindow .close img {
+    height: 100%;
+    filter: var(--npoFilter);
+    transition: transform 0.5s;
+}
+
+.close:hover img {
+    transform: rotate(180deg);
+}
+
+.aboutWindow .container {
+    background-color: white;
+    height: 80%;
+    width: 80%;
+    margin-left: 7.5%;
+    margin-top: 5%;
+    border-radius: 2em;
+    padding-top: 1%;
+    padding-lefT: 1%;
+    overflow-y: auto;
+}
+
+.aboutWindow .container::-webkit-scrollbar {
+    display: none;
+  }
+
+.closeWrapper {
+    position: relative;
+    height: 0;
+    width: 0;
+}
+
+.aboutWindow .container p,.aboutWindow .container a {
+    font-family: var(--serif);
+    text-decoration: none;
+    color: black;
+}
+
+.aboutWindow .container a:hover {
+    color: var(--NPOOrange);
+}
+
+.aboutWindow .container a img {
+    height: 4em;
+}
+
+.aboutWindow .container a {
+    font-size: 2em;
+    font-size: var(--sans);
+
+}
+
+::-webkit-scrollbar {
+    width: 1%;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: var(--lightGrey);
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--darkBlueGrey);
+    box-sizing: border-box;
+    border: 2px solid var(--midGrey);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--darkBlueGreyHighlight);
+  }
+
+  @media only all and (max-width: 1034px) {
+    .current.container {
+        display: grid;
+        grid-template-areas: 'img left' 'img control';
+        grid-template-columns: calc(100%/3) calc(calc(100%/3)*2) 0%;
+        grid-template-rows: 90% 10%;
+        background-color: var(--lightGrey);
+    }
+
+    .current.station {
+        display: none;
+        grid-area: none;
+    }
+  }
+
+.settings.container {
+    display: grid;
+    grid-template-columns: minmax(auto, 25%) auto;
+    grid-template-areas: 'SettingsLeft SettingsRight';
+    height: 100%;
+}
+
+.settings.right {
+    background-color: white;
+}
+
+.settings.left {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.settings.left .container {
+    margin-top: 10%;
+    margin-left: 10% !important;
+    padding-left: 10%;
+    width: max-content;
+}
+
+.settings.left .container div {
+    width: max-content;
+    font-family: var(--serif);
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+}
+
+.settings.left .container div:hover {
+    background-color: rgba(64, 70, 77, 0.178);
+}
+
+.settings.left .container div.active:hover {
+    background-color: rgba(116,127,141,0.24);
+}
+
+.settings.left .container div.active {
+    background-color: rgba(116,127,141,0.24);
+}
+
+.settings div .header {
+    font-family: var(--sans);
+    font-size: 4em;
+    margin-top: 0.1em;
+}
+
+.settings.checkbox {
+    height: 3em;
+    margin-top: 0;
+}
+
+.settings.label {
+    font-size: 3em;
+}
+
+.save {
+    width: 100vw;
+    margin-top: calc(100vh - 3.5em - 30px);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.save > div {
+    background-color: var(--darkGrey);
+    height: 2.5em;
+    width: min-content;
+    justify-self: center;
+}
+
+.save > div > div {
+    display: flex;
+}
+
+.save > div > div * {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.save > div > div p:nth-of-type(1) {
+    display: inline;
+}
+
+.save div > div p:nth-of-type(2) {
+    margin-left: 25%;
+    cursor: pointer;
+}
+
+.save > div > div div {
+    margin-left: 5%;
+    cursor: pointer;
+}
+
+.saveWrapper {
+    width: 100%;
+    position: relative;
+    height: 0;
+    width: 0;
+}
+
+.GuideElement {
+    width: 90vw;
+    margin-left: 5vw;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: 'leftGuide rightGuide';
+    margin-top: 1vh;
+    background-color: var(--lightGrey);
+}
+
+.GuideElement img {
+    grid-area: leftGuide;
+    max-width: 100%;
+}
+
+.GuideElement p {
+    grid-area: rightGuide;
+}
+
+.GuideElement p span:nth-of-type(1) {
+    font-family: var(--serif);
+    font-size: 2em;
+}
+
+.GuideElement p span {
+    font-family: var(--sans);
+    font-size: 1.5em;
+>>>>>>> Stashed changes
 }

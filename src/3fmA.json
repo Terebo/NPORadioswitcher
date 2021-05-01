@@ -1,0 +1,26 @@
+{
+    "success": true,
+    "message": null,
+    "messages": null,
+    "data": [
+        {
+            "broadcasters": [
+                {
+                    "name": "3FM",
+                    "alias": "3fm"
+                }
+            ],
+            "startdatetime": "2020-10-11T00:00:00",
+            "stopdatetime": "2020-10-11T23:59:59",
+            "title": "NPO 3FM Alternative",
+            "broadcaster": "3FM",
+            "broadcaster_slug": "3fm",
+            "image": "https://www.npo3fm.nl/templates/npo3fm/images/placeholder-1by1.png",
+            "presenters": "Non stop",
+            "image_url": "https://www.npo3fm.nl/templates/npo3fm/images/placeholder-1by1.png",
+            "image_url_100x100": "https://www.npo3fm.nl/templates/npo3fm/images/placeholder-1by1.png",
+            "image_url_200x200": "https://www.npo3fm.nl/templates/npo3fm/images/placeholder-1by1.png",
+            "image_url_400x400": "https://www.npo3fm.nl/templates/npo3fm/images/placeholder-1by1.png"
+        }
+    ]
+}

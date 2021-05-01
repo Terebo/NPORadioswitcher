@@ -1,5 +1,12 @@
 {
+<<<<<<< Updated upstream
   "volume": "50",
+=======
+  "volume": "0",
+  "discord": false,
+  "startup": true,
+  "icon": true,
+>>>>>>> Stashed changes
   "timetable": [
     [
       {
