@@ -17,6 +17,9 @@ main {
   // flex: 1 0 auto;
 }
 
+div.titlebar {
+  background-color: color("npoRadioSwitcher", "BlueGrey") !important;
+}
 button,
 input,
 optgroup,

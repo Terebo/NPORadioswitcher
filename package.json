@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Switches between NPO radio stations automaticly",
   "scripts": {
-    "build": "npx tsc; sass 'src/sass/materialize.scss' 'dist/css/materialize.css'"
+    "build": "npx tsc; sass 'src/sass/light/materialize.scss' 'dist/css/materializelight.css'; sass 'src/sass/dark/materialize.scss' 'dist/css/materializedark.css'; sass 'src/sass/general.scss' 'dist/css/general.css'"
   },
   "main": "dist/main.js",
   "repository": "https://github.com/electron/electron-quick-start-typescript",
@@ -23,6 +23,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
+    "custom-electron-titlebar": "^3.2.6",
     "electron-settings": "^4.0.2"
   }
 }

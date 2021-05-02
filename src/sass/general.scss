@@ -1,0 +1,40 @@
+main {
+    height: calc(100vh - 30px);
+    &>div.row {
+        margin: 0;
+        width: 100vw;
+        display: flex;
+
+        &>div.imgcontainer {
+            padding: 0;
+            height: 100%;
+        }
+
+        &>div.middlePannel {
+            padding: 0;
+            .infoScreen{
+                height: 85%;
+                min-height: calc(100% - 50px);
+            }
+            .controlPanel {
+                height: 15%;
+                max-height: 50px;
+                min-height: 40px;
+                padding-left: 0.25rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .btn-floating {
+                    a {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#currentimg {
+    margin: 0;
+    padding: 0;
+}

@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title></title>
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-  </head>
-  <body>
-    <h1>NPORadioSwitcher 2.0 Pre beta</h1>
-    <script src="./dist/renderer.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <link type="text/css" rel="stylesheet" href="dist/css/materializedark.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="dist/css/general.css" media="screen,projection" />
+</head>
+
+<body class="npoRadioSwitcher defaultBackground" style="margin: 0; padding: 0; height: 100vh;">
+  <!--main interface-->
+  <main>
+    <!--container that displays info about what is currently happening-->
+    <div class="current row col s12 m12 l12 xl12">
+      <img class="responsive-img col s4 m4 l3 xl3 green imgcontainer npoRadioSwitcher lightGrey" id="currentimg" src="img/NPO_Radio_logo_2014_L.svg">
+      <div class="col s8 m8 l6 xl6 middlePannel">
+        <div class="npoRadioSwitcher lightGrey infoScreen">
+          
+        </div>
+        <div class="npoRadioSwitcher midGrey controlPanel">
+          <a class="btn-floating waves-effect waves-dark npoRadioSwitcher lightGrey"><i class="material-icons NPOOrange-text">play_arrow</i></a>
+        </div>
+      </div>
+      <div class="col s0 m0 l3 xl3 npoRadioSwitcher BlueGrey controlPanel hide-on-med-and-down">
+        a
+      </div>
+    </div>
+  </main>
+
+  <script type="text/javascript" src="dist/renderer.js"></script>
+  <script type="text/javascript" src="dist/jslib/waves.js"></script>
+</body>
+
 </html>

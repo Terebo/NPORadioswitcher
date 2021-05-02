@@ -1,0 +1,133 @@
+{
+    "NPORadio1": {
+        "name": "NPO radio 1",
+        "audiostream": "http://icecast.omroep.nl/radio1-bb-mp3",
+        "playlist-api": "empty.json",
+        "guide-api": "https://www.nporadio1.nl/api/broadcasts",
+        "img": "NPO_Radio_1_logo_2014",
+        "themeColour": "#003576",
+        "themeFilter": "invert(16%) sepia(36%) saturate(4121%) hue-rotate(199deg) brightness(91%) contrast(105%)",
+        "discordImg": "r1",
+        "modifier": "1"
+    },
+
+    "NPORadio2": {
+        "name": "NPO radio 2",
+        "audiostream": "http://icecast.omroep.nl/radio2-bb-mp3",
+        "playlist-api": "https://www.nporadio2.nl/api/tracks",
+        "guide-api": "https://www.nporadio2.nl/api/broadcasts",
+        "img": "NPO_Radio_2_logo_2014",
+        "themeColour": "#d91f27",
+        "themeFilter": "invert(21%) sepia(84%) saturate(3557%) hue-rotate(346deg) brightness(86%) contrast(98%)",
+        "discordImg": "r2",
+        "modifier": "2"
+    },
+
+    "NPO3FM": {
+        "name": "NPO 3FM",
+        "audiostream": "http://icecast.omroep.nl/3fm-bb-mp3",
+        "playlist-api": "https://www.npo3fm.nl/api/tracks",
+        "guide-api": "https://www.npo3fm.nl/api/broadcasts",
+        "img": "NPO_3FM_logo_2020",
+        "themeColour": "#35d327",
+        "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)",
+        "discordImg": "3fm",
+        "modifier": "3"
+    },
+
+    "NPORadio4": {
+        "name": "NPO radio 4",
+        "audiostream": "http://icecast.omroep.nl/radio4-bb-mp3",
+        "playlist-api": "https://www.nporadio4.nl/api/tracks",
+        "guide-api": "https://www.nporadio4.nl/api/broadcasts",
+        "img": "NPO_Radio_4_logo_2014",
+        "themeColour": "#77206e",
+        "themeFilter": "invert(17%) sepia(77%) saturate(1660%) hue-rotate(280deg) brightness(97%) contrast(97%)",
+        "discordImg": "r4",
+        "modifier": "4"
+    },
+
+    "NPORadio5": {
+        "name": "NPO radio 5",
+        "audiostream": "http://icecast.omroep.nl/radio5-bb-mp3",
+        "playlist-api": "https://www.nporadio5.nl/api/tracks",
+        "guide-api": "https://www.nporadio5.nl/api/broadcasts",
+        "img": "NPO_Radio_5_logo_2016",
+        "themeColour": "#fdb912",
+        "themeFilter": "invert(73%) sepia(51%) saturate(1341%) hue-rotate(349deg) brightness(103%) contrast(98%)",
+        "discordImg": "r5",
+        "modifier": "5"
+    },
+
+    "NPOFunX": {
+        "name": "NPO FunX",
+        "audiostream": "http://icecast.omroep.nl/funx-bb-mp3",
+        "playlist-api": "https://www.funx.nl/api/tracks",
+        "guide-api": "https://www.funx.nl/api/broadcasts",
+        "img": "NPO_funX_logo_2014",
+        "themeColour": "#e60082",
+        "themeFilter": "invert(19%) sepia(84%) saturate(5246%) hue-rotate(314deg) brightness(86%) contrast(113%)",
+        "discordImg": "fx",
+        "modifier": "6"
+    },
+     
+    "2S&J": {
+        "name": "NPO Radio 2 Soul & Jazz",
+        "audiostream": "http://icecast.omroep.nl/radio6-bb-mp3",
+        "playlist-api": "https://www.nporadio2.nl/api/soulenjazz/trackss",
+        "guide-api": "https://www.nporadio2.nl/api/soulenjazz/broadcasts",
+        "img": "NPO_Radio_2_Soul_&_Jazz_logo_2020",
+        "themeColour": "#d91f27",
+        "themeFilter": "invert(21%) sepia(84%) saturate(3557%) hue-rotate(346deg) brightness(86%) contrast(98%)",
+        "discordImg": "r2sj",
+        "modifier": "2"
+    },
+
+    "3FMalternative": {
+        "name": "NPO 3FM alternative",
+        "audiostream": "http://icecast.omroep.nl/3fm-alternative-mp3",
+        "playlist-api": "https://www.npo3fm.nl/api/alternative/tracks",
+        "guide-api": "https://www.npo3fm.nl/api/alternative/broadcasts",
+        "img": "NPO_3FM_alternative_logo_2020",
+        "themeColour": "#35d327",
+        "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)",
+        "discordImg": "3fma",
+        "modifier": "3"
+    },
+
+    "3FMkx": {
+        "name": "NPO 3FM KX",
+        "audiostream": "http://icecast.omroep.nl/3fm-serioustalent-mp3",
+        "playlist-api": "https://www.npo3fm.nl/api/kx/tracks",
+        "guide-api": "https://www.npo3fm.nl/api/kx/broadcasts",
+        "img": "NPO_3FM_kx_logo_2020",
+        "themeColour": "#ffff28",
+        "themeFilter": "invert(88%) sepia(24%) saturate(1266%) hue-rotate(5deg) brightness(110%) contrast(106%)",
+        "discordImg": "3fmk",
+        "modifier": "3"
+    },
+
+    "4Concerten": {
+        "name": "NPO radio 4 Concerten",
+        "audiostream": "http://icecast.omroep.nl/radio4-eigentijds-mp3",
+        "playlist-api": "https://www.nporadio4.nl/api/concerten/tracks",
+        "guide-api": "https://www.nporadio4.nl/api/concerten/broadcasts",
+        "img": "NPO_Radio_4_concerten_logo_2014",
+        "themeColour": "#77206e",
+        "themeFilter": "invert(17%) sepia(77%) saturate(1660%) hue-rotate(280deg) brightness(97%) contrast(97%)",
+        "discordImg": "r4c",
+        "modifier": "4"
+    },
+
+    "5sterren": {
+        "name": "NPO Sterren NL",
+        "audiostream": "https://icecast.omroep.nl/radio2-sterrennl-mp3",
+        "playlist-api": "https://www.nporadio5.nl/api/sterrennl/tracks",
+        "guide-api": "https://www.nporadio5.nl/api/sterrennl/broadcasts",
+        "img": "NPO_sterrenNL_logo_2016",
+        "themeColour": "#263c88",
+        "themeFilter": "invert(22%) sepia(14%) saturate(6957%) hue-rotate(208deg) brightness(89%) contrast(92%)",
+        "discordImg": "snl",
+        "modifier": "7"
+    }
+}

@@ -324,6 +324,26 @@ $grey: (
   "darken-4":   #212121
 );
 
+$npoRadioSwitcher: (
+  "BlueGrey": #262d35,
+  "defaultBackground": #ffffff,
+  "lightGrey": #e6e6e6,
+  "midGrey": #4c4c4c
+);
+
+$NPOOrange : (
+  "base":       #ff6d00,
+  "lighten-5":  #ffce61,
+  "lighten-4":  #f5c95c,
+  "lighten-3":  #ffc255,
+  "lighten-2":  #ffb447,
+  "lighten-1":  #ff8c1F,
+  "darken-1":   #D64500,
+  "darken-2":   #c23100,
+  "darken-3":   #a31200,
+  "darken-4":   #820000
+);
+
 $shades: (
   "black":        #000000,
   "white":        #FFFFFF,
@@ -351,7 +371,9 @@ $colors: (
   "brown": $brown,
   "blue-grey": $blue-grey,
   "grey": $grey,
-  "shades": $shades
+  "shades": $shades,
+  "npoRadioSwitcher": $npoRadioSwitcher,
+  "NPOOrange": $NPOOrange
 ) !default;
 
 
