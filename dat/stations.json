@@ -8,7 +8,8 @@
         "themeColour": "#003576",
         "themeFilter": "invert(16%) sepia(36%) saturate(4121%) hue-rotate(199deg) brightness(91%) contrast(105%)",
         "discordImg": "r1",
-        "modifier": "1"
+        "modifier": "1",
+        "sassName": "NPORadio1"
     },
 
     "NPORadio2": {
@@ -20,7 +21,8 @@
         "themeColour": "#d91f27",
         "themeFilter": "invert(21%) sepia(84%) saturate(3557%) hue-rotate(346deg) brightness(86%) contrast(98%)",
         "discordImg": "r2",
-        "modifier": "2"
+        "modifier": "2",
+        "sassName": "NPORadio2"
     },
 
     "NPO3FM": {
@@ -32,7 +34,8 @@
         "themeColour": "#35d327",
         "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)",
         "discordImg": "3fm",
-        "modifier": "3"
+        "modifier": "3",
+        "sassName": "NPO3FM"
     },
 
     "NPORadio4": {
@@ -44,7 +47,8 @@
         "themeColour": "#77206e",
         "themeFilter": "invert(17%) sepia(77%) saturate(1660%) hue-rotate(280deg) brightness(97%) contrast(97%)",
         "discordImg": "r4",
-        "modifier": "4"
+        "modifier": "4",
+        "sassName": "NPORadio4"
     },
 
     "NPORadio5": {
@@ -56,7 +60,8 @@
         "themeColour": "#fdb912",
         "themeFilter": "invert(73%) sepia(51%) saturate(1341%) hue-rotate(349deg) brightness(103%) contrast(98%)",
         "discordImg": "r5",
-        "modifier": "5"
+        "modifier": "5",
+        "sassName": "NPORadio5"
     },
 
     "NPOFunX": {
@@ -68,7 +73,8 @@
         "themeColour": "#e60082",
         "themeFilter": "invert(19%) sepia(84%) saturate(5246%) hue-rotate(314deg) brightness(86%) contrast(113%)",
         "discordImg": "fx",
-        "modifier": "6"
+        "modifier": "6",
+        "sassName": "NPOFunX"
     },
      
     "2S&J": {
@@ -80,7 +86,8 @@
         "themeColour": "#d91f27",
         "themeFilter": "invert(21%) sepia(84%) saturate(3557%) hue-rotate(346deg) brightness(86%) contrast(98%)",
         "discordImg": "r2sj",
-        "modifier": "2"
+        "modifier": "2",
+        "sassName": "N2SJ"
     },
 
     "3FMalternative": {
@@ -92,7 +99,8 @@
         "themeColour": "#35d327",
         "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)",
         "discordImg": "3fma",
-        "modifier": "3"
+        "modifier": "3",
+        "sassName": "N3FMalternative"
     },
 
     "3FMkx": {
@@ -104,7 +112,8 @@
         "themeColour": "#ffff28",
         "themeFilter": "invert(88%) sepia(24%) saturate(1266%) hue-rotate(5deg) brightness(110%) contrast(106%)",
         "discordImg": "3fmk",
-        "modifier": "3"
+        "modifier": "3",
+        "sassName": "N3FMkx"
     },
 
     "4Concerten": {
@@ -116,7 +125,8 @@
         "themeColour": "#77206e",
         "themeFilter": "invert(17%) sepia(77%) saturate(1660%) hue-rotate(280deg) brightness(97%) contrast(97%)",
         "discordImg": "r4c",
-        "modifier": "4"
+        "modifier": "4",
+        "sassName": "N4Concerten"
     },
 
     "5sterren": {
@@ -128,6 +138,7 @@
         "themeColour": "#263c88",
         "themeFilter": "invert(22%) sepia(14%) saturate(6957%) hue-rotate(208deg) brightness(89%) contrast(92%)",
         "discordImg": "snl",
-        "modifier": "7"
+        "modifier": "7",
+        "sassName": "N5sterren"
     }
 }

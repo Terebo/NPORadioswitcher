@@ -30,3 +30,14 @@
     color: $color_value !important;
   }
 }
+
+// waves
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      .waves-effect.waves-#{$color_name} .waves-ripple {
+        background-color: $color_value !important;
+      }
+    }
+  }
+}

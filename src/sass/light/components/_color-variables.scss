@@ -328,7 +328,8 @@ $npoRadioSwitcher: (
   "BlueGrey": #262d35,
   "defaultBackground": #ffffff,
   "lightGrey": #e6e6e6,
-  "midGrey": #4c4c4c
+  "midGrey": #4c4c4c,
+  "text": #353535
 );
 
 $NPOOrange : (
@@ -342,6 +343,50 @@ $NPOOrange : (
   "darken-2":   #c23100,
   "darken-3":   #a31200,
   "darken-4":   #820000
+);
+
+$NPORadio1: (
+  "base": #003576,
+);
+
+$NPORadio2: (
+  "base": #d91f27
+);
+
+$NPO3FM: (
+  "base": #35d327
+);
+
+$NPORadio4: (
+  "base": #77206e
+);
+
+$NPORadio5: (
+  "base": #fdb912
+);
+
+$NPOFunX: (
+  "base": #e60082
+);
+
+$N3FMalternative: (
+  "base": #35d327
+);
+
+$N3FMkx: (
+  "base": #ffff28
+);
+
+$N4Concerten: (
+  "base": #77206e
+);
+
+$N5sterren: (
+  "base": #263c88
+);
+
+$N2SJ: (
+  "base": #d91f27
 );
 
 $shades: (
@@ -373,7 +418,18 @@ $colors: (
   "grey": $grey,
   "shades": $shades,
   "npoRadioSwitcher": $npoRadioSwitcher,
-  "NPOOrange": $NPOOrange
+  "NPOOrange": $NPOOrange,
+  "NPORadio1": $NPORadio1,
+  "NPORadio2": $NPORadio2,
+  "NPO3FM": $NPO3FM,
+  "NPORadio4": $NPORadio4,
+  "NPORadio5": $NPORadio5,
+  "NPOFunX": $NPOFunX,
+  "N3FMalternative": $N3FMalternative,
+  "N3FMkx": $N3FMkx,
+  "N4Concerten": $N4Concerten,
+  "N5sterren": $N5sterren,
+  "N2SJ": $N2SJ
 ) !default;
 
 
