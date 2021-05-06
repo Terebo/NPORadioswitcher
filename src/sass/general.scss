@@ -63,6 +63,55 @@ main {
     }
 }
 
+section.settings {
+    height: calc(100vh - 30px);
+    max-height: calc(100vh - 30px);
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    &.scale-in {
+        opacity: 100%;
+        transition: opacity 0.25s cubic-bezier(0.53, 0.01, 0.36, 1) 0.05s,
+        transform 0.3s cubic-bezier(0.53, 0.01, 0.36, 1) !important;
+    }
+    &.scale-out {
+        opacity: 0%;
+        transition: opacity 0.25s cubic-bezier(0.53, 0.01, 0.36, 1),
+        transform 0.3s cubic-bezier(0.53, 0.01, 0.36, 1) !important;
+    }
+
+    & ul.sidenav {
+        transform: translateY(0);
+        position: relative;
+        height: calc(100vh - 30px);
+        max-height: calc(100vh - 30px);
+        li.bold a:focus {
+            background-color: rgba(79, 84, 92, 0.32);
+        }
+    }
+
+    & > .close {
+        position: absolute;
+        float: right;
+        right: 17px;
+        top: 6px;
+        &:focus {
+            background-color: rgba(79, 84, 92, 0.32);
+        }
+    }
+
+    & > div {
+        width: calc(100vw - 300px);
+        height: calc(100vh - 30px);
+        max-height: calc(100vh - 30px);
+        overflow-x: hidden;
+    }
+
+    &>div>section {
+        padding-top: 6px;
+    }
+}
+
 .ColourAnimate * {
     transition: background-color 0.3s ease-out, color 0.3s ease-out, filter 0.3s ease-out;
 }
@@ -76,4 +125,11 @@ main {
     margin-right: 5px;
     margin-top: 1px;
     background-size: 85% !important;
+}
+
+.themeFont {
+    &.bold {
+        font-family: 'themeFontBold', fallback, sans-serif;
+    }
+    font-family: 'themeFont', fallback, sans-serif;
 }

@@ -8,8 +8,29 @@ settings.configure({
     numSpaces: 2,
     prettify: true
 })
+
+var localisation: { [k: string]: any } = {};
+if (settings.getSync("lang") === undefined) {
+  const osLocale = require('os-locale');
+
+  const langcode: string = osLocale.sync();
+  try {
+    localisation = require("../dat/lang/" + langcode + ".json");
+  }
+  catch (error) {
+    if (error.code === "MODULE_NOT_FOUND") {
+      localisation = require("../dat/lang/" + "en-GB" + ".json");
+    }
+    else {
+      console.error(error);
+    }
+  }
+}
+else {
+  localisation = require("../dat/lang/" + settings.getSync("lang") + ".json");
+}
+
 var settingsF = settings.getSync();
-console.log(settingsF);
 
 window.addEventListener('DOMContentLoaded', () => {
     if(settingsF.theme === "light") {
@@ -20,4 +41,8 @@ window.addEventListener('DOMContentLoaded', () => {
         icon: 'img/icon/icon.png'
     });
     Bar.updateTitle();
+    document.querySelectorAll('[data-translate]').forEach(elm => {
+        elm.innerHTML = elm.innerHTML.replace(/\${([^}]*)}/g, (r, k) => localisation[k]);
+    })
+    
 });

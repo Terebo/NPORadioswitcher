@@ -3,12 +3,33 @@ import * as path from "path";
 var settings = require("electron-settings");
 
 settings.configure({
-    atomicSave: true,
-    dir: "dat",
-    fileName: "settings.json",
-    numSpaces: 2,
-    prettify: true
-})
+  atomicSave: true,
+  dir: "dat",
+  fileName: "settings.json",
+  numSpaces: 2,
+  prettify: true
+});
+
+var localisation: { [k: string]: any } = {};
+if (settings.getSync("lang") === undefined) {
+  const osLocale = require('os-locale');
+
+  const langcode: string = osLocale.sync();
+  try {
+    localisation = require("../dat/lang/" + langcode + ".json");
+  }
+  catch (error) {
+    if (error.code === "MODULE_NOT_FOUND") {
+      localisation = require("../dat/lang/" + "en-GB" + ".json");
+    }
+    else {
+      console.error(error);
+    }
+  }
+}
+else {
+  localisation = require("../dat/lang/" + settings.getSync("lang") + ".json");
+}
 
 function createWindow() {
   // Create the browser window.
@@ -31,10 +52,10 @@ function createWindow() {
     {
       label: 'File',
       submenu: [
-        { type: 'radio', label: 'dark theme', checked: settings.getSync("theme")==="light"?false:true, click(menuItem, browserWindow, event) { switchThme(menuItem, browserWindow, event) }, id: 'ds' },
-        { type: 'radio', label: 'light theme', checked: settings.getSync("theme")==="dark"?false:true, click(menuItem, browserWindow, event) { switchThme(menuItem, browserWindow, event) }, id: 'ls' },
+        { type: 'radio', label: localisation.dark + " " + localisation.mode, checked: settings.getSync("theme") === "light" ? false : true, click(menuItem, browserWindow, event) { switchThme(menuItem, browserWindow, event) }, id: 'ds' },
+        { type: 'radio', label: localisation.light + " " + localisation.mode, checked: settings.getSync("theme") === "dark" ? false : true, click(menuItem, browserWindow, event) { switchThme(menuItem, browserWindow, event) }, id: 'ls' },
         { type: 'separator' },
-        { label: 'settings', accelerator: 'CommandOrControl+Shift+S', click(menuItem, browserWindow, event) { openSettings(menuItem, browserWindow, event) }, icon: __dirname + "/../img/icon/settings-small.png" }
+        { label: localisation.settings, accelerator: 'CommandOrControl+Shift+S', click(menuItem, browserWindow, event) { openSettings(menuItem, browserWindow, event) }, icon: __dirname + "/../img/icon/settings-small.png" }
       ]
     },
     {
@@ -53,6 +74,7 @@ function createWindow() {
     mainWindow.webContents.send('changedTheme', menuItem.id);
   }
   function openSettings(menuItem: Electron.MenuItem, browserWindow: BrowserWindow, event: Electron.KeyboardEvent) {
+    mainWindow.webContents.send('openSettings', menuItem.id);
   }
 }
 

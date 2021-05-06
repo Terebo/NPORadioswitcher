@@ -9,7 +9,8 @@
         "themeFilter": "invert(16%) sepia(36%) saturate(4121%) hue-rotate(199deg) brightness(91%) contrast(105%)",
         "discordImg": "r1",
         "modifier": "1",
-        "sassName": "NPORadio1"
+        "sassName": "NPORadio1",
+        "font": ["NPORadio1/regular.ttf", "NPORadio1/bold.ttf"]
     },
 
     "NPORadio2": {
@@ -22,7 +23,8 @@
         "themeFilter": "invert(21%) sepia(84%) saturate(3557%) hue-rotate(346deg) brightness(86%) contrast(98%)",
         "discordImg": "r2",
         "modifier": "2",
-        "sassName": "NPORadio2"
+        "sassName": "NPORadio2",
+        "font": ["NPORadio2/regular.woff", "NPORadio2/bold.woff"]
     },
 
     "NPO3FM": {
@@ -35,7 +37,8 @@
         "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)",
         "discordImg": "3fm",
         "modifier": "3",
-        "sassName": "NPO3FM"
+        "sassName": "NPO3FM",
+        "font": ["NPO3FM/regular.woff", "NPO3FM/bold.woff"]
     },
 
     "NPORadio4": {
@@ -48,7 +51,8 @@
         "themeFilter": "invert(17%) sepia(77%) saturate(1660%) hue-rotate(280deg) brightness(97%) contrast(97%)",
         "discordImg": "r4",
         "modifier": "4",
-        "sassName": "NPORadio4"
+        "sassName": "NPORadio4",
+        "font": ["NPORadio4/regular.woff", "NPORadio4/bold.woff"]
     },
 
     "NPORadio5": {
@@ -61,7 +65,8 @@
         "themeFilter": "invert(73%) sepia(51%) saturate(1341%) hue-rotate(349deg) brightness(103%) contrast(98%)",
         "discordImg": "r5",
         "modifier": "5",
-        "sassName": "NPORadio5"
+        "sassName": "NPORadio5",
+        "font": ["NPORadio5/regular.woff2", "NPORadio5/bold.woff2"]
     },
 
     "NPOFunX": {
@@ -74,7 +79,8 @@
         "themeFilter": "invert(19%) sepia(84%) saturate(5246%) hue-rotate(314deg) brightness(86%) contrast(113%)",
         "discordImg": "fx",
         "modifier": "6",
-        "sassName": "NPOFunX"
+        "sassName": "NPOFunX",
+        "font": ["NPOFunX/regular.woff2", "NPOFunX/bold.woff2"]
     },
      
     "2S&J": {
@@ -87,7 +93,8 @@
         "themeFilter": "invert(21%) sepia(84%) saturate(3557%) hue-rotate(346deg) brightness(86%) contrast(98%)",
         "discordImg": "r2sj",
         "modifier": "2",
-        "sassName": "N2SJ"
+        "sassName": "N2SJ",
+        "font": ["NPORadio2/regular.woff", "NPORadio2/bold.woff"]
     },
 
     "3FMalternative": {
@@ -100,7 +107,8 @@
         "themeFilter": "invert(76%) sepia(62%) saturate(4094%) hue-rotate(69deg) brightness(102%) contrast(88%)",
         "discordImg": "3fma",
         "modifier": "3",
-        "sassName": "N3FMalternative"
+        "sassName": "N3FMalternative",
+        "font": ["NPO3FM/regular.woff", "NPO3FM/bold.woff"]
     },
 
     "3FMkx": {
@@ -113,7 +121,8 @@
         "themeFilter": "invert(88%) sepia(24%) saturate(1266%) hue-rotate(5deg) brightness(110%) contrast(106%)",
         "discordImg": "3fmk",
         "modifier": "3",
-        "sassName": "N3FMkx"
+        "sassName": "N3FMkx",
+        "font": ["NPO3FM/regular.woff", "NPO3FM/bold.woff"]
     },
 
     "4Concerten": {
@@ -126,7 +135,8 @@
         "themeFilter": "invert(17%) sepia(77%) saturate(1660%) hue-rotate(280deg) brightness(97%) contrast(97%)",
         "discordImg": "r4c",
         "modifier": "4",
-        "sassName": "N4Concerten"
+        "sassName": "N4Concerten",
+        "font": ["NPORadio4/regular.woff", "NPORadio4/bold.woff"]
     },
 
     "5sterren": {
@@ -139,6 +149,7 @@
         "themeFilter": "invert(22%) sepia(14%) saturate(6957%) hue-rotate(208deg) brightness(89%) contrast(92%)",
         "discordImg": "snl",
         "modifier": "7",
-        "sassName": "N5sterren"
+        "sassName": "N5sterren",
+        "font": ["5Sterren/regular.ttf", "5Sterren/bold.ttf"]
     }
 }
