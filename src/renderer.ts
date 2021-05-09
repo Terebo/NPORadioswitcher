@@ -1,6 +1,10 @@
 var settings = require("electron-settings");
 var ipcRenderer = require("electron").ipcRenderer;
-const stations = require("../dat/stations.json");
+const fs = require("fs");
+const stations: unknown = JSON.parse(fs.readFileSync(__dirname + "/dat/stations.json", {encoding: "utf8"}));
+
+/* === Onload functions == */
+
 //set up settings config
 settings.configure({
     atomicSave: true,
@@ -10,17 +14,18 @@ settings.configure({
     prettify: true
 });
 
+//load localisation file
 var localisation: { [k: string]: any } = {};
 if (settings.getSync("lang") === undefined) {
   const osLocale = require('os-locale');
 
   const langcode: string = osLocale.sync();
   try {
-    localisation = require("../dat/lang/" + langcode + ".json");
+    localisation = require(__dirname + "/dat/lang/" + langcode + ".json");
   }
   catch (error) {
     if (error.code === "MODULE_NOT_FOUND") {
-      localisation = require("../dat/lang/" + "en-GB" + ".json");
+      localisation = require(__dirname + "/dat/lang/" + "en-GB" + ".json");
     }
     else {
       console.error(error);
@@ -28,18 +33,29 @@ if (settings.getSync("lang") === undefined) {
   }
 }
 else {
-  localisation = require("../dat/lang/" + settings.getSync("lang") + ".json");
+  localisation = require(__dirname + "/dat/lang/" + settings.getSync("lang") + ".json");
 }
 
+/* == eventsListeners == */
+
+//event for switching tabs in the settings menu
+document.querySelectorAll('.settings>.sidenav a').forEach(elm => {
+    elm.addEventListener('click', e=>settingsTab(e));
+});
+
+//events for the buttons bar
 window.addEventListener("resize", e => ResizeBar());
 window.addEventListener("load", e => ResizeBar());
+
+/* == functions in runtime == */
+
 //buttons bar needs to be the same height as control panel, this ensures that
 function ResizeBar() {
     var height: string = getComputedStyle(document.querySelector(".controlPanel")).height;
     document.getElementById("tabs").style.height = height;
 }
 
-//changes theme
+//changes theme takes event from the menubar
 ipcRenderer.on('changedTheme', function (even: any, message: string) {
     if (message === "ls") {
         document.body.classList.add("ColourAnimate");
@@ -73,6 +89,7 @@ ipcRenderer.on('changedTheme', function (even: any, message: string) {
     }
 })
 
+//opens settings, takes event from the menu bar
 ipcRenderer.on('openSettings', function (even: any, message: string) {
     document.querySelector("section.settings").classList.remove("scale-out");
     document.querySelector("section.settings").classList.add("scale-in");
@@ -81,15 +98,13 @@ ipcRenderer.on('openSettings', function (even: any, message: string) {
     }
 });
 
-document.querySelectorAll('.settings>.sidenav a').forEach(elm => {
-    elm.addEventListener('click', e=>settingsTab(e));
-});
-
+// closes the settings menu
 document.querySelector("section.settings>.close").addEventListener("click", e => {
     document.querySelector("section.settings").classList.remove("scale-in");
     document.querySelector("section.settings").classList.add("scale-out");
-})
+});
 
+//changes tabs
 function settingsTab(e: Event) {
     const target: HTMLElement = e.target as HTMLElement;
     Array.from(target.parentElement.parentElement.children).forEach(element => {
@@ -105,10 +120,16 @@ function settingsTab(e: Event) {
 
 }
 
+//loads timetable
 function loadTimetable(fromOtherTab: boolean) {
     var table: String[][] = settings.getSync("table");
     var container: HTMLElement = document.querySelector('.settings [data-coupledid="timetable"] .container');
-    table.forEach((e, i) => {
-        
-    });
+    var tablehtml = fs.readFileSync("table.html", {encoding: "utf8"});
+    container.innerHTML = tablehtml;
+    table.forEach((e: String[], i: number) => {
+        var list: Element = container.children[i];
+        e.forEach((f: string, j: number)=> {
+            list.children[j + 1].classList.add(stations[f].sassName)
+        })
+    })
 };

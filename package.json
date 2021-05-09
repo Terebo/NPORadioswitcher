@@ -21,12 +21,12 @@
     "electron": "^9.4.0",
     "eslint": "^7.3.1",
     "simplex-noise": "^2.4.0",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "sass": "^1.32.12"
   },
   "dependencies": {
     "custom-electron-titlebar": "^3.2.6",
     "electron-settings": "^4.0.2",
-    "os-locale": "^5.0.0",
-    "sass": "^1.32.12"
+    "os-locale": "^5.0.0"
   }
 }
