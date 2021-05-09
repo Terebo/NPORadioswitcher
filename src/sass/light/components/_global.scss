@@ -13,6 +13,19 @@ body {
   // flex-direction: column;
 }
 
+::-webkit-scrollbar {
+  background-color: color("npoRadioSwitcher", "midGrey");
+  border-left: 0.1rem solid color("npoRadioSwitcher", "BlueGrey");
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color("npoRadioSwitcher", "lightGrey");
+  border: 0.1rem solid darken(color("npoRadioSwitcher", "lightGrey"), 10%);
+  &:hover {
+    background-color: adjust-color($color: color("npoRadioSwitcher", "lightGrey"), $red: 25, $green: 27, $blue: 29);
+  }
+}
+
 main {
   // flex: 1 0 auto;
 }

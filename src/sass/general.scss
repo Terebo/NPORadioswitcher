@@ -58,6 +58,10 @@ main {
                 display: flex;
                 align-items: center;
                 font-size: 2rem;
+                border-radius: 0;
+                &:hover {
+                    background-color: rgba(79, 84, 92, 0.32);
+                }
             }
         }
     }
@@ -72,12 +76,11 @@ section.settings {
     &.scale-in {
         opacity: 100%;
         transition: opacity 0.25s cubic-bezier(0.53, 0.01, 0.36, 1) 0.05s,
-        transform 0.3s cubic-bezier(0.53, 0.01, 0.36, 1) !important;
+            transform 0.3s cubic-bezier(0.53, 0.01, 0.36, 1) !important;
     }
     &.scale-out {
         opacity: 0%;
-        transition: opacity 0.25s cubic-bezier(0.53, 0.01, 0.36, 1),
-        transform 0.3s cubic-bezier(0.53, 0.01, 0.36, 1) !important;
+        transition: opacity 0.25s cubic-bezier(0.53, 0.01, 0.36, 1), transform 0.3s cubic-bezier(0.53, 0.01, 0.36, 1) !important;
     }
 
     & ul.sidenav {
@@ -93,7 +96,7 @@ section.settings {
     & > .close {
         position: absolute;
         float: right;
-        right: 17px;
+        right: 20px;
         top: 6px;
         &:focus {
             background-color: rgba(79, 84, 92, 0.32);
@@ -107,8 +110,70 @@ section.settings {
         overflow-x: hidden;
     }
 
-    &>div>section {
-        padding-top: 6px;
+    & > div {
+        > section {
+            padding-top: 6px;
+
+            &[data-coupledid="timetable"] > .container {
+                display: flex;
+                flex-direction: row;
+                .day {
+                    width: calc(100% / 7);
+                    > div:not(:nth-child(1)) {
+                        height: 1rem;
+                        &.img {
+                            background-repeat: no-repeat;
+                            background-size: auto 4rem;
+                            &.NPORadio1 {
+                                background-image: url(../../img/NPO_Radio_1_logo_2014.svg);
+                            }
+                            &.NPORadio2 {
+                                background-image: url(../../img/NPO_Radio_2_logo_2014.svg);
+                            }
+                            &.NPO3FM {
+                                background-image: url(../../img/NPO_3FM_logo_2020.svg);
+                            }
+                            &.NPORadio4 {
+                                background-image: url(../../img/NPO_Radio_4_logo_2014.svg);
+                            }
+                            &.NPORadio5 {
+                                background-image: url(../../img/NPO_Radio_5_logo_2014.svg);
+                            }
+                            &.NPOFunX {
+                                background-image: url(../../img/NPO_funX_logo_2014.svg);
+                            }
+                            &.N3FMalternative {
+                                background-image: url(../../img/NPO_3FM_alternative_logo_2020.svg);
+                            }
+                            &.N3FMkx {
+                                background-image: url(../../img/NPO_3FM_kx_logo_2020.svg);
+                            }
+                            &.N4Concerten {
+                                background-image: url(../../img/NPO_Radio_4_concerten_logo_2014.svg);
+                            }
+                            &.N5sterren {
+                                background-image: url(../../img/NPO_sterrenNL_logo_2016.svg);
+                            }
+                            &.N2SJ {
+                                background-image: url(../../img/NPO_Radio_2_Soul_&_Jazz_logo_2020.svg);
+                            }
+                        }
+                        cursor: pointer;
+                        &:hover {
+                            border: 0.1rem solid black;
+                        }
+                    }
+                    > div:nth-child(1) {
+                        display: flex;
+                        justify-content: center;
+                        font-size: 1.2rem;
+                        position: sticky;
+                        top: 0;
+                    }
+
+                }
+            }
+        }
     }
 }
 
@@ -129,7 +194,7 @@ section.settings {
 
 .themeFont {
     &.bold {
-        font-family: 'themeFontBold', fallback, sans-serif;
+        font-family: "themeFontBold", fallback, sans-serif;
     }
-    font-family: 'themeFont', fallback, sans-serif;
+    font-family: "themeFont", fallback, sans-serif;
 }
