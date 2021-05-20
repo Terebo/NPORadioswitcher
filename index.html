@@ -11,11 +11,12 @@
 
   <link type="text/css" rel="stylesheet" href="dist/css/materializedark.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="dist/css/general.css" media="screen,projection" />
-  <style id=""fontDecleration>
+  <style id="" fontDecleration>
     @font-face {
       font-family: 'themeFont';
       src: url(font/NPO3FM/bold.woff) format('truetype');
     }
+
     @font-face {
       font-family: 'themeFontBold';
       src: url(font/NPO3FM/regular.woff) format('truetype');
@@ -28,52 +29,70 @@
   <section class="npoRadioSwitcher defaultBackground scale-out scale-transition settings">
     <ul class="sidenav sidenav-fixed npoRadioSwitcher lightGrey">
       <li class="bold">
-        <a id="timetable" class="waves-effect waves-NPOOrange NPOOrange npoRadioSwitcher-text text-text" data-translate="true">${timetable}</a>
+        <a id="timetable" class="waves-effect waves-NPOOrange NPOOrange npoRadioSwitcher-text text-text"
+          data-translate="true">${timetable}</a>
       </li>
       <li class="bold">
-        <a id="app" class="waves-effect waves-NPOOrange npoRadioSwitcher-text text-text" data-translate="true">${app} ${settings}</a>
+        <a id="app" class="waves-effect waves-NPOOrange npoRadioSwitcher-text text-text" data-translate="true">${app}
+          ${settings}</a>
       </li>
       <li class="bold">
-        <a id="display" class="waves-effect waves-NPOOrange npoRadioSwitcher-text text-text" data-translate="true">${language} & ${display}</a>
+        <a id="display" class="waves-effect waves-NPOOrange npoRadioSwitcher-text text-text"
+          data-translate="true">${language} & ${display}</a>
       </li>
-      <li><div class="divider npoRadioSwitcher text"></div></li>
+      <li>
+        <div class="divider npoRadioSwitcher text"></div>
+      </li>
       <li class="bold">
-        <a id="about" class="waves-effect waves-NPOOrange npoRadioSwitcher-text text-text" data-translate="true">${about}</a>
+        <a id="about" class="waves-effect waves-NPOOrange npoRadioSwitcher-text text-text"
+          data-translate="true">${about}</a>
       </li>
     </ul>
     <div class="npoRadioSwitcher defaultBackground">
       <section data-coupledid="timetable">
+
+        <div class="fixed-action-btn">
+          <a class="btn-floating btn-large NPOOrange">
+            <i class="large npoRadioSwitcher-text text-text material-icons">radio</i>
+          </a>
+          <ul>
+          </ul>
+        </div>
+
         <div class="container z-depth-1">
-          
+
         </div>
       </section>
       <section data-coupledid="app">
-        
+
       </section>
       <section data-coupledid="display">
-        
+
       </section>
       <section data-coupledid="about">
-        
+
       </section>
     </div>
-    <a class="btn-floating waves-effect waves-NPOOrange npoRadioSwitcher lightGrey close"><i class="material-icons npoRadioSwitcher-text text-text">close</i></a>
+    <a class="btn-floating waves-effect waves-NPOOrange npoRadioSwitcher lightGrey close"><i
+        class="material-icons npoRadioSwitcher-text text-text">close</i></a>
   </section>
   <!--main interface-->
   <main>
     <!--container that displays info about what is currently happening-->
     <div class="current row col s12 m12 l12 xl12">
-      <img class="responsive-img col s4 m4 l3 xl3 imgcontainer npoRadioSwitcher lightGrey" id="currentimg" src="img/NPO_Radio_logo_2014_L.svg">
+      <img class="responsive-img col s4 m4 l3 xl3 imgcontainer npoRadioSwitcher lightGrey" id="currentimg"
+        src="img/NPO_Radio_logo_2014_L.svg">
       <div class="col s8 m8 l6 xl6 middlePannel">
         <div class="npoRadioSwitcher lightGrey infoScreen">
-          
+
         </div>
         <div class="npoRadioSwitcher midGrey controlPanel">
-          <a class="btn-floating waves-effect waves-NPOOrange npoRadioSwitcher lightGrey"><i class="material-icons NPOOrange-text">play_arrow</i></a>
+          <a class="btn-floating waves-effect waves-NPOOrange npoRadioSwitcher lightGrey"><i
+              class="material-icons NPOOrange-text">play_arrow</i></a>
         </div>
       </div>
       <div class="col s0 m0 l3 xl3 npoRadioSwitcher BlueGrey hide-on-med-and-down">
-        
+
       </div>
     </div>
     <div class="tabs row col s12 m12 l12 xl12 npoRadioSwitcher midGrey" id="tabs">

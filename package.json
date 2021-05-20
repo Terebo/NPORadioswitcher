@@ -16,17 +16,18 @@
   "license": "MIT",
   "devDependencies": {
     "@types/electron": "^1.6.10",
-    "@typescript-eslint/eslint-plugin": "^3.4.0",
-    "@typescript-eslint/parser": "^3.4.0",
-    "electron": "^9.4.0",
-    "eslint": "^7.3.1",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "electron": "^9.4.4",
+    "eslint": "^7.26.0",
+    "sass": "^1.32.13",
     "simplex-noise": "^2.4.0",
-    "typescript": "^3.9.5",
-    "sass": "^1.32.12"
+    "typescript": "^3.9.9"
   },
   "dependencies": {
-    "custom-electron-titlebar": "^3.2.6",
+    "custom-electron-titlebar": "^3.2.7",
     "electron-settings": "^4.0.2",
+    "materialize-css": "^1.0.0",
     "os-locale": "^5.0.0"
   }
 }

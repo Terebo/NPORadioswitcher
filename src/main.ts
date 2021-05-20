@@ -34,9 +34,9 @@ else {
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    height: 640,
+    height: 725,
     width: 930,
-    minHeight: 640,
+    minHeight: 725,
     minWidth: 930,
     icon: path.join(__dirname, "../img/icon/icon_large.png"),
     webPreferences: {

@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const stations: stations = JSON.parse(fs.readFileSync(__dirname + "/dat/stations.json", {encoding: "utf8"}));
 
-/* === interfaces === */
+/* == interfaces == */
 
 interface stations { 
     "NPORadio1": stationsType,
@@ -35,7 +35,14 @@ type stationsType = {
 };
 
 type stationNames = "NPORadio1"|"NPORadio2"|"NPO3FM"|"NPORadio4"|"NPORadio5"|"NPOFunX"|"2S&J"|"3FMalternative"|"3FMkx"|"4Concerten"|"5sterren";
-/* === Onload functions == */
+
+type timeTableColouringstation = [boolean, stationNames|"none"]
+
+/* == Global declarations == */
+
+var timeTableColouringstationConfig: timeTableColouringstation = [false, "none"];
+
+/* == Onload functions == */
 
 //set up settings config
 settings.configure({
@@ -78,6 +85,13 @@ document.querySelectorAll('.settings>.sidenav a').forEach(elm => {
 //events for the buttons bar
 window.addEventListener("resize", e => ResizeBar());
 window.addEventListener("load", e => ResizeBar());
+
+//event for exiting out of the station selecting thingy
+window.addEventListener("keyup", e => {
+    if(e.key === "Escape" && timeTableColouringstationConfig[0]) {
+        discardTimeTableSelectedStation();
+    }
+});
 
 /* == functions in runtime == */
 
@@ -127,6 +141,7 @@ ipcRenderer.on('openSettings', function (even: any, message: string) {
     document.querySelector("section.settings").classList.add("scale-in");
     if(settings.getSync("temp.selectedTab") === "timetable") {
     loadTimetable(false);
+    createTimeTableInteractionButtons();
     }
 });
 
@@ -134,10 +149,11 @@ ipcRenderer.on('openSettings', function (even: any, message: string) {
 document.querySelector("section.settings>.close").addEventListener("click", e => {
     document.querySelector("section.settings").classList.remove("scale-in");
     document.querySelector("section.settings").classList.add("scale-out");
+    timeTableColouringstationConfig = [false, "none"];
 });
 
 //changes tabs
-function settingsTab(e: Event) {
+function settingsTab(e: Event): void {
     const target: HTMLElement = e.target as HTMLElement;
     Array.from(target.parentElement.parentElement.children).forEach(element => {
         if(element.children[0].id != target.id) {
@@ -148,41 +164,92 @@ function settingsTab(e: Event) {
     settings.set("temp.selectedTab", target.id);
     if(target.id === "timetable") {
         loadTimetable(true);
+        createTimeTableInteractionButtons();
+    }
+    else {
+        timeTableColouringstationConfig = [false, "none"];
     }
 
 }
 
 //loads timetable
-function loadTimetable(fromOtherTab: boolean) {
+function loadTimetable(fromOtherTab: boolean): void {
     var table: stationNames[][] = settings.getSync("table");
     var container: HTMLElement = document.querySelector('.settings [data-coupledid="timetable"] .container');
     var tablehtml = fs.readFileSync(path.join(__dirname, "/dat/table.html"), {encoding: "utf8"});
     container.innerHTML = tablehtml;
     table.forEach((e: stationNames[], i: number) => {
         let previousStation: stationNames;
-        let samestationCounter: number = 0;
+        let samestationCounter: number = 1;
         var list: Element = container.children[i];
+        list.firstElementChild.innerHTML = list.firstElementChild.innerHTML.replace(/\${([^}]*)}/g, (r, k) => localisation[k]);
         e.forEach((f: stationNames, j: number)=> {
             if(f === previousStation) {
                 samestationCounter++;
-                if(samestationCounter >= 3) {
+                if(samestationCounter >= 4 && e[j+1] !== f) {
                     let start: HTMLElement = <HTMLElement>list.children[j + 1];
-                    start.classList.add("img");
-                    start.style.backgroundPosition = "center " + (4-((4/samestationCounter+1)*(0))*-1).toString + "rem";
+                    const isEqual: boolean = samestationCounter % 2 === 0;
                     for (let k = 0; k < samestationCounter; k++) {
+                        start.classList.add("img");
+                        let offset: number = (k-1 + (isEqual?0:0.5))-(samestationCounter/2);
+                        start.style.backgroundPosition = "center " + offset + "rem";
                         let currentEl: HTMLElement = <HTMLElement>start.previousElementSibling;
                         start = currentEl;
-                        start.classList.add("img");
-                        let offset: number = 4-((4/samestationCounter+1)*(k+1))*-1;
-                        start.style.backgroundPosition = "center " + offset + "rem";
+                        
                     }
                 }
             }
             else {
-                samestationCounter = 0;
+                samestationCounter = 1;
             }
-            list.children[j + 1].classList.add(stations[f].sassName, "deSat");
+            if((j+1)%4 === 1 && j !== 0) {
+                list.children[j + 1].classList.add("hourTop");
+                console.log(j, (j-1)%4, list.children[j + 1]);
+            }
+            if((j+1)%4 === 0 && j !== 0) {
+                list.children[j + 1].classList.add("hourBottom");
+                console.log(j, (j+1)%4, list.children[j + 1]);
+            }
+            list.children[j + 1].classList.add(stations[f].sassName, "deSat", "pointer");
+            list.children[j + 1].addEventListener("click", e=>changeTimetable(<HTMLElement>e.target));
             previousStation = f;
         })
     })
 };
+
+//creates buttons to interact with the timetable
+
+function createTimeTableInteractionButtons(): void {
+    var M = require('materialize-css/dist/js/materialize');
+    var container: HTMLElement = document.querySelector('.settings [data-coupledid="timetable"] .fixed-action-btn ul');
+    Object.keys(stations).forEach((e, i) => {
+        var name: stationNames = <stationNames>Object.keys(stations)[i];
+        container.insertAdjacentHTML('beforeend', `<li><a class="btn-floating small ${stations[name].sassName} desat" onclick="changingTimetableSelectedStation('${name}')"><img src="img/${stations[name].img}.svg"></a></li>`)
+        
+    });   
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {hoverEnabled: false});
+}
+
+//sets selected colouring station
+
+function changingTimetableSelectedStation(stationName: stationNames): void {
+    timeTableColouringstationConfig = [true, stationName];
+}
+
+function discardTimeTableSelectedStation(): void {
+    timeTableColouringstationConfig = [false, "none"];
+    console.log(timeTableColouringstationConfig);
+}
+
+//changes the station that's there
+
+function changeTimetable(el: HTMLElement) {
+    if(timeTableColouringstationConfig[0]) {
+    var column: number = Array.prototype.indexOf.call(el.parentElement.parentElement.children, el.parentElement);
+    var row: number = Array.prototype.indexOf.call(el.parentElement.children, el) - 1;
+    el.classList.remove(stations[<stationNames>settings.getSync("table")[column][row]].sassName);
+    el.classList.add(stations[<stationNames>timeTableColouringstationConfig[1]].sassName);
+    settings.setSync(`table[${column}][${row}]`, timeTableColouringstationConfig[1]);
+    }
+}  
