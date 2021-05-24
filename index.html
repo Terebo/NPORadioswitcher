@@ -11,7 +11,7 @@
 
   <link type="text/css" rel="stylesheet" href="dist/css/materializedark.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="dist/css/general.css" media="screen,projection" />
-  <style id="" fontDecleration>
+  <style id="fontDecleration">
     @font-face {
       font-family: 'themeFont';
       src: url(font/NPO3FM/bold.woff) format('truetype');
@@ -25,6 +25,8 @@
 </head>
 
 <body class="npoRadioSwitcher defaultBackground" style="margin: 0; padding: 0; height: 100vh;">
+  <!-- where the actual audio lives-->
+  <audio src="" aria-label="hidden" class="hide"></audio>
   <!--settings interface-->
   <section class="npoRadioSwitcher defaultBackground scale-out scale-transition settings">
     <ul class="sidenav sidenav-fixed npoRadioSwitcher lightGrey">
@@ -96,8 +98,8 @@
       </div>
     </div>
     <div class="tabs row col s12 m12 l12 xl12 npoRadioSwitcher midGrey" id="tabs">
-      <a class="waves-effect waves-NPO3FM btn-flat shades-text white-text themeFont" data-translate="true">${guide}</a>
-      <a class="waves-effect waves-teal btn-flat shades-text white-text themeFont" data-translate="true">${playlist}</a>
+      <a class="waves-effect btn-flat shades-text white-text themeFont" data-replaceColour="true" data-case="waves-" data-translate="true">${guide}</a>
+      <a class="waves-effect btn-flat shades-text white-text themeFont"  data-replaceColour="true" data-case="waves-" data-translate="true">${playlist}</a>
     </div>
   </main>
 

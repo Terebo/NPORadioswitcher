@@ -2,6 +2,7 @@ var settings = require("electron-settings");
 var ipcRenderer = require("electron").ipcRenderer;
 const fs = require("fs");
 const path = require("path");
+var cron = require('node-cron');
 const stations: stations = JSON.parse(fs.readFileSync(__dirname + "/dat/stations.json", {encoding: "utf8"}));
 
 /* == interfaces == */
@@ -37,6 +38,8 @@ type stationsType = {
 type stationNames = "NPORadio1"|"NPORadio2"|"NPO3FM"|"NPORadio4"|"NPORadio5"|"NPOFunX"|"2S&J"|"3FMalternative"|"3FMkx"|"4Concerten"|"5sterren";
 
 type timeTableColouringstation = [boolean, stationNames|"none"]
+
+type replaceColourCases = "waves"|"text"|"background"|"image"
 
 /* == Global declarations == */
 
@@ -86,12 +89,24 @@ document.querySelectorAll('.settings>.sidenav a').forEach(elm => {
 window.addEventListener("resize", e => ResizeBar());
 window.addEventListener("load", e => ResizeBar());
 
+//event for initialising the station
+window.addEventListener("load", e=> changeStation(undefined));
+
 //event for exiting out of the station selecting thingy
 window.addEventListener("keyup", e => {
     if(e.key === "Escape" && timeTableColouringstationConfig[0]) {
         discardTimeTableSelectedStation();
     }
 });
+
+/* == sets up cron timers ==*/
+
+
+cron.schedule('0,15,30,45 * * * *', () => {
+    changeStation(undefined);
+    console.log("15 mins!")
+  },
+  {timezone: "Europe/Amsterdam"});
 
 /* == functions in runtime == */
 
@@ -133,7 +148,49 @@ ipcRenderer.on('changedTheme', function (even: any, message: string) {
             document.body.classList.remove("ColourAnimate");
         }, 302);
     }
-})
+});
+
+/* = functions for changing channel = */
+
+function changeStation(station?: stationNames): void {
+    console.log(station, typeof station);
+    if(!station || station === undefined) {
+        station = new selctedStation().name;
+    }
+    console.log(station);
+    const prevStation: stationNames = settings.getSync("temp.station");
+    settings.setSync("temp.station", station);
+    document.querySelector("audio").src = stations[station].audiostream;
+    document.querySelectorAll('main [data-replaceColour="true"]').forEach((el: HTMLElement) => {
+        var cases: replaceColourCases[] = <replaceColourCases[]>el.dataset.case.split(",");
+        cases.forEach(e => {
+            el.classList.remove(e + stations[prevStation].sassName);
+            el.classList.add(e + stations[station].sassName);
+        });
+    });
+    document.getElementById("fontDecleration").innerHTML = `@font-face {
+        font-family: 'themeFont';
+        src: url(font/${stations[station].font[0]}) format('truetype');
+      }
+  
+      @font-face {
+        font-family: 'themeFontBold';
+        src: url(font/${stations[station].font[1]}) format('truetype');
+      }`
+    
+}
+
+class selctedStation {
+    name: stationNames;
+    constructor(public time: Date = new Date()) {
+        var row: number = Math.floor(((time.getHours() * 60) + time.getMinutes()) / 15);
+        var column: number = (time.getDay() - 1) === -1 ? 6 : (time.getDay() - 1);
+        console.log(row, column, time.toLocaleString('en-GB', { timeZone: 'Europe/Amsterdam' }));
+        this.name = settings.getSync(`table[${column}][${row}]`);
+    }
+}
+
+/* = functions for the settings = */
 
 //opens settings, takes event from the menu bar
 ipcRenderer.on('openSettings', function (even: any, message: string) {
@@ -252,4 +309,5 @@ function changeTimetable(el: HTMLElement) {
     el.classList.add(stations[<stationNames>timeTableColouringstationConfig[1]].sassName);
     settings.setSync(`table[${column}][${row}]`, timeTableColouringstationConfig[1]);
     }
-}  
+} 
+

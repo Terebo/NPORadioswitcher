@@ -150,6 +150,6 @@
         "discordImg": "snl",
         "modifier": "7",
         "sassName": "N5sterren",
-        "font": ["5Sterren/regular.ttf", "5Sterren/bold.ttf"]
+        "font": ["5sterren/regular.ttf", "5sterren/bold.ttf"]
     }
 }
