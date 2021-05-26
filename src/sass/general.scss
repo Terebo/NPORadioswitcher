@@ -115,7 +115,11 @@ section.settings {
             padding-top: 6px;
 
             &[data-coupledid="timetable"] {
-                & > .fixed-action-btn > ul > li > a {
+                & > .fixed-action-btn {
+                    bottom: 10px;
+                & > ul {
+                    bottom: 35px;
+                & > li > a {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -124,6 +128,8 @@ section.settings {
                         width: 95%;
                     }
                 }
+                }
+            }
 
                 & > .container {
                     display: flex;
@@ -179,7 +185,31 @@ section.settings {
                             cursor: pointer;
                             &:hover {
                                 border: 0.1rem solid black;
+                                & span {
+                                    display: block;
+                                }
                             }
+                            & span {
+                                display: none;
+                                margin: 0;
+                                margin-top: -0.1rem;
+                                margin-left: -0.1rem;
+                                width: 100%;
+                                height: 100%;
+                                font-size: 0.9rem;
+                                align-self: center;
+                                line-height: 1rem;
+                                text-align: center;
+                                color: white;
+
+                            }
+                            &.N3FMkx, &.N2SJ {
+                                span {
+                                    color: black;
+                                }
+
+                            }
+
                         }
                         > div:nth-child(1) {
                             display: flex;

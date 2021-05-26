@@ -182,11 +182,21 @@ function changeStation(station?: stationNames): void {
 
 class selctedStation {
     name: stationNames;
+    x: number;
+    y: number;
     constructor(public time: Date = new Date()) {
         var row: number = Math.floor(((time.getHours() * 60) + time.getMinutes()) / 15);
         var column: number = (time.getDay() - 1) === -1 ? 6 : (time.getDay() - 1);
         console.log(row, column, time.toLocaleString('en-GB', { timeZone: 'Europe/Amsterdam' }));
         this.name = settings.getSync(`table[${column}][${row}]`);
+        this.x = column;
+        this.y = row;
+    }
+    getY(): number {
+        return(this.y);
+    }
+    getX(): number {
+        return(this.x);
     }
 }
 
@@ -198,7 +208,9 @@ ipcRenderer.on('openSettings', function (even: any, message: string) {
     document.querySelector("section.settings").classList.add("scale-in");
     if(settings.getSync("temp.selectedTab") === "timetable") {
     loadTimetable(false);
+    if(document.querySelector('.settings [data-coupledid="timetable"] .fixed-action-btn ul').childElementCount === 0) {
     createTimeTableInteractionButtons();
+    }
     }
 });
 
@@ -221,7 +233,6 @@ function settingsTab(e: Event): void {
     settings.set("temp.selectedTab", target.id);
     if(target.id === "timetable") {
         loadTimetable(true);
-        createTimeTableInteractionButtons();
     }
     else {
         timeTableColouringstationConfig = [false, "none"];
@@ -269,6 +280,7 @@ function loadTimetable(fromOtherTab: boolean): void {
             }
             list.children[j + 1].classList.add(stations[f].sassName, "deSat", "pointer");
             list.children[j + 1].addEventListener("click", e=>changeTimetable(<HTMLElement>e.target));
+            list.children[j+1].children[0].innerHTML = String(Math.floor(j/4)) + ":" + String((j%4) * 15) + " - " + stations[f].name;
             previousStation = f;
         })
     })
@@ -302,11 +314,16 @@ function discardTimeTableSelectedStation(): void {
 //changes the station that's there
 
 function changeTimetable(el: HTMLElement) {
+    if(el.tagName == "SPAN") {
+        el = el.parentElement;
+    }
+    console.log(el ,el.tagName);
     if(timeTableColouringstationConfig[0]) {
     var column: number = Array.prototype.indexOf.call(el.parentElement.parentElement.children, el.parentElement);
     var row: number = Array.prototype.indexOf.call(el.parentElement.children, el) - 1;
     el.classList.remove(stations[<stationNames>settings.getSync("table")[column][row]].sassName);
     el.classList.add(stations[<stationNames>timeTableColouringstationConfig[1]].sassName);
+    el.children[0].innerHTML = el.children[0].innerHTML.replace(stations[<stationNames>settings.getSync("table")[column][row]].name, stations[<stationNames>timeTableColouringstationConfig[1]].name);
     settings.setSync(`table[${column}][${row}]`, timeTableColouringstationConfig[1]);
     }
 } 
