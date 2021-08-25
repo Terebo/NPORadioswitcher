@@ -1,9 +1,5 @@
 {
   "theme": "dark",
-  "temp": {
-    "selectedTab": "timetable",
-    "station": "NPORadio2"
-  },
   "table": [
     [
       "NPORadio2",
@@ -630,18 +626,18 @@
       "NPORadio2",
       "NPORadio2",
       "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
-      "NPORadio2",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
+      "NPO3FM",
       "NPO3FM",
       "NPO3FM",
       "NPO3FM",
@@ -691,5 +687,7 @@
       "NPORadio2",
       "NPORadio2"
     ]
-  ]
+  ],
+  "lang": "nl-NL",
+  "audioState": false
 }

@@ -20,6 +20,44 @@ main {
                 .infoScreen {
                     height: 80%;
                     min-height: calc(100% - 50px);
+                    padding: 1rem;
+                    & > * > span {
+                        display: block;
+                    }
+                    & > div:nth-child(1) {
+                        & > span:nth-child(1) {
+                            font-size: 3rem;
+                        }
+                        & > span:nth-child(2) {
+                            font-size: 2.75rem;
+                        }
+                        & > span:nth-child(3) {
+                            font-size: 2rem;
+                            & > span {
+                                vertical-align: super;
+                            }
+                            & > i:nth-child(1) {
+                                font-size: 3.5rem;
+                            }
+                            & > span:nth-child(3) {
+                                margin-left: 2rem;
+                            }
+                            & > img {
+                                height: 1.5ex;
+                                vertical-align: super;
+                                margin-left: 1rem;
+                            }
+                        }
+                    }
+                    & > div:nth-child(2) > span:nth-child(1){
+                        font-size: 2.5rem;
+                        display: block;
+                    }
+
+                    & > div:nth-child(2) > span:nth-child(2){
+                        font-size: 2.25rem;
+                        display: block;
+                    }
                 }
                 .controlPanel {
                     height: 20%;
@@ -32,6 +70,9 @@ main {
                     .btn-floating {
                         a {
                             font-size: 2rem;
+                        }
+                        &:nth-child(2) {
+                            margin-left: 20px;
                         }
                     }
                 }
@@ -113,23 +154,24 @@ section.settings {
     & > div {
         > section {
             padding-top: 6px;
+            min-height: 100%;
 
             &[data-coupledid="timetable"] {
                 & > .fixed-action-btn {
                     bottom: 10px;
-                & > ul {
-                    bottom: 35px;
-                & > li > a {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    & > img {
-                        height: auto;
-                        width: 95%;
+                    & > ul {
+                        bottom: 35px;
+                        & > li > a {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            & > img {
+                                height: auto;
+                                width: 95%;
+                            }
+                        }
                     }
                 }
-                }
-            }
 
                 & > .container {
                     display: flex;
@@ -201,15 +243,13 @@ section.settings {
                                 line-height: 1rem;
                                 text-align: center;
                                 color: white;
-
                             }
-                            &.N3FMkx, &.N2SJ {
+                            &.N3FMkx,
+                            &.N2SJ {
                                 span {
                                     color: black;
                                 }
-
                             }
-
                         }
                         > div:nth-child(1) {
                             display: flex;
@@ -218,6 +258,16 @@ section.settings {
                             position: sticky;
                             top: 0;
                         }
+                    }
+                }
+            }
+
+            &[data-coupledid="display"] {
+                &>div {
+                    padding-left: 3ex;
+                    &>span:nth-child(1) {
+                        font-size: 2.5rem;
+                        font-weight: 700;
                     }
                 }
             }
@@ -249,4 +299,83 @@ section.settings {
 
 .pointer {
     cursor: pointer;
+}
+
+@import "variables";
+
+@font-face {
+    font-family: "broadcaster";
+    src: url("../../font/broadcaster/broadcaster.eot?dmog8l");
+    src: url("../../font/broadcaster/broadcaster.eot?dmog8l#iefix") format("embedded-opentype"),
+        url("../../font/broadcaster/broadcaster.ttf?dmog8l") format("truetype"),
+        url("../../font/broadcaster/broadcaster.woff?dmog8l") format("woff"),
+        url("../../font/broadcaster/broadcaster.svg?dmog8l##broadcaster") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+i[class^="Ticon"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "broadcaster" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.Ticon-MAX {
+    &:before {
+        content: $Ticon-MAX;
+    }
+}
+.Ticon-AVROTROS {
+    &:before {
+        content: $Ticon-AVROTROS;
+    }
+}
+.Ticon-BNNVARA {
+    &:before {
+        content: $Ticon-BNNVARA;
+    }
+}
+.Ticon-EO {
+    &:before {
+        content: $Ticon-EO;
+    }
+}
+.Ticon-HUMAN {
+    &:before {
+        content: $Ticon-HUMAN;
+    }
+}
+.Ticon-KRONCRV {
+    &:before {
+        content: $Ticon-KRONCRV;
+    }
+}
+.Ticon-NOS {
+    &:before {
+        content: $Ticon-NOS;
+    }
+}
+.Ticon-NTR {
+    &:before {
+        content: $Ticon-NTR;
+    }
+}
+.Ticon-POWNED {
+    &:before {
+        content: $Ticon-POWNED;
+    }
+}
+.Ticon-WNL {
+    &:before {
+        content: $Ticon-WNL;
+    }
 }

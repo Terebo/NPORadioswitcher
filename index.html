@@ -26,7 +26,7 @@
 
 <body class="npoRadioSwitcher defaultBackground" style="margin: 0; padding: 0; height: 100vh;">
   <!-- where the actual audio lives-->
-  <audio src="" aria-label="hidden" class="hide"></audio>
+  <audio src="" aria-label="hidden" preload="metadata" class="hide"></audio>
   <!--settings interface-->
   <section class="npoRadioSwitcher defaultBackground scale-out scale-transition settings">
     <ul class="sidenav sidenav-fixed npoRadioSwitcher lightGrey">
@@ -65,13 +65,19 @@
 
         </div>
       </section>
-      <section data-coupledid="app">
+      <section data-coupledid="app" class="hide">
 
       </section>
-      <section data-coupledid="display">
-
+      <section data-coupledid="display" class="hide">
+        <div>
+          <span class="NPOOrange-text bold">Taal</span>
+          <div class="input-field col s12 text-text">
+            <select id="langSelector">
+            </select>
+          </div>
+        </div>
       </section>
-      <section data-coupledid="about">
+      <section data-coupledid="about" class="hide">
 
       </section>
     </div>
@@ -82,21 +88,33 @@
   <main>
     <!--container that displays info about what is currently happening-->
     <div class="current row col s12 m12 l12 xl12">
-      <img class="responsive-img col s4 m4 l3 xl3 imgcontainer npoRadioSwitcher lightGrey" id="currentimg"
+      <img class="responsive-img col s4 m4 l4 x4 imgcontainer npoRadioSwitcher lightGrey" style="padding: 0" id="currentimg"
         src="img/NPO_Radio_logo_2014_L.svg">
-      <div class="col s8 m8 l6 xl6 middlePannel">
+      <div class="col s10 m10 l10 xl0 middlePannel">
         <div class="npoRadioSwitcher lightGrey infoScreen">
-
+          <div>
+          <span class="themeFont bold" data-replaceColour="true" data-case="-text">ProgrammeTitle</span>
+          <span class="npoRadioSwitcher-text text-text themeFont bold">Presenters</span>
+          <span class="npoRadioSwitcher-text text-text themeFont"><i class="Ticon-NPO"></i><span>NPO</span><span>xx:xx-xx:xx</span><image class="responsive-img centered" src="img/NPO_Radio_logo_2014_L.svg"></image>
+          </div>
+          <div>
+            <span class="themeFont bold" data-replaceColour="true" data-case="-text">SongTitle</span>
+            <span class="npoRadioSwitcher-text text-text themeFont">Artist</span>
+          </div>
         </div>
+        <!--audio controls-->
         <div class="npoRadioSwitcher midGrey controlPanel">
           <a class="btn-floating waves-effect waves-NPOOrange npoRadioSwitcher lightGrey"><i
               class="material-icons NPOOrange-text">play_arrow</i></a>
+              <a class="btn-floating waves-effect waves-NPOOrange npoRadioSwitcher lightGrey"><i
+                class="material-icons NPOOrange-text">volume_up</i></a>
+              <p class="range-field">
+                <input type="range" min="0" max="100" />
+              </p>
         </div>
       </div>
-      <div class="col s0 m0 l3 xl3 npoRadioSwitcher BlueGrey hide-on-med-and-down">
-
-      </div>
     </div>
+    <!--info tabs-->
     <div class="tabs row col s12 m12 l12 xl12 npoRadioSwitcher midGrey" id="tabs">
       <a class="waves-effect btn-flat shades-text white-text themeFont" data-replaceColour="true" data-case="waves-" data-translate="true">${guide}</a>
       <a class="waves-effect btn-flat shades-text white-text themeFont"  data-replaceColour="true" data-case="waves-" data-translate="true">${playlist}</a>

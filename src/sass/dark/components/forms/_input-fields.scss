@@ -37,6 +37,7 @@ textarea.materialize-textarea {
   box-shadow: none;
   box-sizing: content-box;
   transition: box-shadow .3s, border .3s;
+  color: color("npoRadioSwitcher", "text");
 
   // Disabled input style
   &:disabled,

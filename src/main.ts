@@ -1,7 +1,6 @@
 import { app, BrowserWindow, Menu } from "electron";
 import * as path from "path";
 var settings = require("electron-settings");
-
 settings.configure({
   atomicSave: true,
   dir: "dat",
@@ -87,6 +86,7 @@ app.on("ready", () => {
 });
 
 app.on("window-all-closed", () => {
+  settings.unsetSync("temp");
   if (process.platform !== "darwin") {
     app.quit();
   }

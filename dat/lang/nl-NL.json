@@ -1,4 +1,7 @@
 {
+    "LangName": "Nederlands",
+    "LangRegion": null,
+    "LangInt": "Dutch",
     "dark": "donkere",
     "light": "lichte",
     "mode": "modus",
@@ -9,5 +12,12 @@
     "display": "uiterlijk",
     "guide": "gids",
     "playlist": "gedraaid",
-    "about": "over"
+    "about": "over",
+    "monday": "Maandag",
+    "tuesday": "Dinsdag",
+    "wednesday": "Woensdag",
+    "thursday": "Donderdag",
+    "friday": "Vrijdag",
+    "saturday": "Zaterdag",
+    "sunday": "Zondag"
 }

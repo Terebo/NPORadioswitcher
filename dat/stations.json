@@ -10,7 +10,8 @@
         "discordImg": "r1",
         "modifier": "1",
         "sassName": "NPORadio1",
-        "font": ["NPORadio1/regular.ttf", "NPORadio1/bold.ttf"]
+        "font": ["NPORadio1/regular.ttf", "NPORadio1/bold.ttf"],
+        "fallbackProgImg": "https://www.nporadio1.nl/images/unknown_programme.jpg"
     },
 
     "NPORadio2": {
@@ -24,7 +25,8 @@
         "discordImg": "r2",
         "modifier": "2",
         "sassName": "NPORadio2",
-        "font": ["NPORadio2/regular.woff", "NPORadio2/bold.woff"]
+        "font": ["NPORadio2/regular.woff", "NPORadio2/bold.woff"],
+        "fallbackProgImg": "https://www.nporadio2.nl/images/unknown_programme.jpg"
     },
 
     "NPO3FM": {
@@ -38,7 +40,8 @@
         "discordImg": "3fm",
         "modifier": "3",
         "sassName": "NPO3FM",
-        "font": ["NPO3FM/regular.woff", "NPO3FM/bold.woff"]
+        "font": ["NPO3FM/regular.woff", "NPO3FM/bold.woff"],
+        "fallbackProgImg": "https://www.npo3fm.nl/images/unknown_programme.jpg"
     },
 
     "NPORadio4": {
@@ -52,7 +55,8 @@
         "discordImg": "r4",
         "modifier": "4",
         "sassName": "NPORadio4",
-        "font": ["NPORadio4/regular.woff", "NPORadio4/bold.woff"]
+        "font": ["NPORadio4/regular.woff", "NPORadio4/bold.woff"],
+        "fallbackProgImg": "https://www.nporadio4.nl/images/unknown_programme.jpg"
     },
 
     "NPORadio5": {
@@ -66,7 +70,8 @@
         "discordImg": "r5",
         "modifier": "5",
         "sassName": "NPORadio5",
-        "font": ["NPORadio5/regular.woff2", "NPORadio5/bold.woff2"]
+        "font": ["NPORadio5/regular.woff2", "NPORadio5/bold.woff2"],
+        "fallbackProgImg": "https://www.nporadio5.nl/images/unknown_programme.jpg"
     },
 
     "NPOFunX": {
@@ -80,13 +85,14 @@
         "discordImg": "fx",
         "modifier": "6",
         "sassName": "NPOFunX",
-        "font": ["NPOFunX/regular.woff2", "NPOFunX/bold.woff2"]
+        "font": ["NPOFunX/regular.woff2", "NPOFunX/bold.woff2"],
+        "fallbackProgImg": "https://www.funx.nl/images/unknown_programme.jpg"
     },
      
     "2S&J": {
         "name": "NPO Radio 2 Soul & Jazz",
         "audiostream": "http://icecast.omroep.nl/radio6-bb-mp3",
-        "playlist-api": "https://www.nporadio2.nl/api/soulenjazz/trackss",
+        "playlist-api": "https://www.nporadio2.nl/api/soulenjazz/tracks",
         "guide-api": "https://www.nporadio2.nl/api/soulenjazz/broadcasts",
         "img": "NPO_Radio_2_Soul_&_Jazz_logo_2020",
         "themeColour": "#d91f27",
@@ -94,7 +100,8 @@
         "discordImg": "r2sj",
         "modifier": "2",
         "sassName": "N2SJ",
-        "font": ["NPORadio2/regular.woff", "NPORadio2/bold.woff"]
+        "font": ["NPORadio2/regular.woff", "NPORadio2/bold.woff"],
+        "fallbackProgImg": "https://www.nporadio2.nl/images/unknown_programme.jpg"
     },
 
     "3FMalternative": {
@@ -108,7 +115,8 @@
         "discordImg": "3fma",
         "modifier": "3",
         "sassName": "N3FMalternative",
-        "font": ["NPO3FM/regular.woff", "NPO3FM/bold.woff"]
+        "font": ["NPO3FM/regular.woff", "NPO3FM/bold.woff"],
+        "fallbackProgImg": "https://www.npo3fm.nl/images/unknown_programme.jpg"
     },
 
     "3FMkx": {
@@ -122,7 +130,8 @@
         "discordImg": "3fmk",
         "modifier": "3",
         "sassName": "N3FMkx",
-        "font": ["NPO3FM/regular.woff", "NPO3FM/bold.woff"]
+        "font": ["NPO3FM/regular.woff", "NPO3FM/bold.woff"],
+        "fallbackProgImg": "https://www.npo3fm.nl/kx/images/unknown_programme.jpg"
     },
 
     "4Concerten": {
@@ -136,7 +145,8 @@
         "discordImg": "r4c",
         "modifier": "4",
         "sassName": "N4Concerten",
-        "font": ["NPORadio4/regular.woff", "NPORadio4/bold.woff"]
+        "font": ["NPORadio4/regular.woff", "NPORadio4/bold.woff"],
+        "fallbackProgImg": "https://www.nporadio4.nl/images/unknown_programme.jpg"
     },
 
     "5sterren": {
@@ -150,6 +160,12 @@
         "discordImg": "snl",
         "modifier": "7",
         "sassName": "N5sterren",
-        "font": ["5sterren/regular.ttf", "5sterren/bold.ttf"]
+        "font": ["5sterren/regular.ttf", "5sterren/bold.ttf"],
+        "fallbackProgImg": "https://www.nporadio5.nl/sterrennl/images/unknown_programme.jpg"
+    },
+
+    "startup":
+    {
+        "sassNAme": "nopers"
     }
 }

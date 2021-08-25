@@ -33,7 +33,7 @@ input[type=range] + .thumb {
   height: 0;
   width: 0;
   border-radius: 50%;
-  background-color: $radio-fill-color;
+  background-color: color("npoRadioSwitcher", "BlueGrey");
   margin-left: 7px;
 
   transform-origin: 50% 50%;
@@ -43,7 +43,7 @@ input[type=range] + .thumb {
     display: block;
     width: 30px;
     text-align: center;
-    color: $radio-fill-color;
+    color: color("npoRadioSwitcher", "lightGrey");
     font-size: 0;
     transform: rotate(45deg);
   }
@@ -63,7 +63,7 @@ input[type=range] + .thumb {
 // Shared
 @mixin range-track {
   height: $track-height;
-  background: #c2c0c2;
+  background: color("npoRadioSwitcher", "lightGrey");
   border: none;
 }
 
@@ -72,7 +72,7 @@ input[type=range] + .thumb {
   height: $range-height;
   width: $range-width;
   border-radius: 50%;
-  background: $radio-fill-color;
+  background: color("NPOOrange", "base");
   transition: box-shadow .3s;
 }
 
@@ -88,20 +88,20 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]::-webkit-slider-thumb {
   @include range-thumb;
   -webkit-appearance: none;
-  background-color: $radio-fill-color;
+  background-color: color("NPOOrange", "base");
   transform-origin: 50% 50%;
   margin: -5px 0 0 0;
 
 }
 
 .keyboard-focused input[type=range]:focus:not(.active)::-webkit-slider-thumb {
-  box-shadow: 0 0 0 10px rgba($radio-fill-color, .26);
+  box-shadow: 0 0 0 10px rgba(color("NPOOrange", "base"), .26);
 }
 
 // FireFox
 input[type=range] {
   /* fix for FF unable to apply focus style bug  */
-  border: 1px solid white;
+  border: 1px solid color("npoRadioSwitcher", "lightGrey");
 
   /*required for proper track sizing in FF*/
 }
@@ -126,7 +126,7 @@ input[type=range]:-moz-focusring {
 }
 
 .keyboard-focused input[type=range]:focus:not(.active)::-moz-range-thumb {
-  box-shadow: 0 0 0 10px rgba($radio-fill-color, .26);
+  box-shadow: 0 0 0 10px rgba(color("NPOOrange", "base"), .26);
 }
 
 // IE 10+
@@ -157,5 +157,5 @@ input[type=range]::-ms-thumb {
 }
 
 .keyboard-focused input[type=range]:focus:not(.active)::-ms-thumb {
-  box-shadow: 0 0 0 10px rgba($radio-fill-color, .26);
+  box-shadow: 0 0 0 10px rgba(color("NPOOrange", "base"), .26);
 }
